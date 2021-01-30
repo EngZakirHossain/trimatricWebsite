@@ -19,11 +19,13 @@ class ProjectController extends Controller
             'title' => 'required',
             'description' => 'required',
             'photo' => 'required',
+            'cat_name' => 'required',
         ]);
 
         $current_id = Project::insertGetId([
             'title' => $request->title,
             'description' => $request->description,
+            'cat_name' => $request->cat_name,
             'created_at' => Carbon::now(),
         ]);
 

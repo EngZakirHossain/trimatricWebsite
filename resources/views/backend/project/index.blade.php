@@ -41,6 +41,18 @@
                                             <div class="row">
                                                 <div class="col-11 m-auto">
                                                         <div class="form-group">
+                                                            <label for="">Project Category<span class="text-danger">*</span></label>
+                                                            <select name="cat_name" id="" class="form-control">
+                                                                <option value="" selected> Select Project Category</option>
+                                                                <option value="CORPORATE">CORPORATE</option>
+                                                                <option value="EDUCATIONAL">EDUCATIONAL</option>
+                                                                <option value="HOSPITALITY">HOSPITALITY</option>
+                                                                <option value="RELIGIOUS">RELIGIOUS</option>
+                                                                <option value="EXTERIOR">EXTERIOR</option>
+                                                                <option value="INTERIOR">INTERIOR</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group">
                                                             <label for="">Project Name<span class="text-danger">*</span></label>
                                                             <textarea class="form-control " type="text" name="title" rows="4">{{ old('title') }}</textarea>
                                                             @error ('title')
@@ -107,6 +119,7 @@
                                         <th>Photo</th>
                                         <th>Title</th>
                                         <th>Description</th>
+                                        <th>Category</th>
                                         <th class="text-right">Actions</th>
                                     </tr>
                                     </thead>
@@ -122,6 +135,7 @@
                                             </td>
                                             <td>{{ $row->title }}</td>
                                             <td>{!! \Illuminate\Support\Str::limit($row->description, 20)  !!}</td>
+                                            <td>{{$row->cat_name}}</td>
 
                                             <td class="text-right">
                                                         <a href="#" class="btn btn-sm btn-white text-danger sweet_delete mr-2"><i class="far fa-trash-alt mr-1"></i>Delete</a>
