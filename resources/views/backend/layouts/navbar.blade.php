@@ -108,7 +108,16 @@
                         <a href="{{ route('slider.index') }}"><i class="fas fa-user"></i> <span>Slider</span></a>
                     </li>
                     <li class="@yield('project')" >
-                        <a href="{{ route('project.index') }}"><i class="fas fa-user"></i> <span>Project</span></a>
+                        <a href="{{ route('project.index') }}"><i class="fas fa-toolbox"></i> <span>Project</span></a>
+                    </li>
+                    <li class="@yield('portfolio')" >
+                        <a href="{{ route('portfolio.index') }}"><i class="fas fa-image"></i> <span>Portfolio</span></a>
+                    </li>
+                    <li class="@yield('client')" >
+                        <a href="{{ route('client.index') }}"><i class="fas fa-user-circle"></i> <span>Client</span></a>
+                    </li>
+                    <li class="@yield('news')" >
+                        <a href="{{ route('contact.allContacts') }}"><i class="fas fa-user-circle"></i> <span>News Letter</span></a>
                     </li>
 
                 </ul>

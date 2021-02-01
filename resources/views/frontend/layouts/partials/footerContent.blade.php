@@ -27,7 +27,7 @@
                         </ul>
                     </div>
                     <!-- footer contacts end -->
-                    <a href="contacts.html" class="ajax fc_button">Get In Touch <i
+                    <a href="{{route('frontend.contact')}}" class="ajax fc_button">Get In Touch <i
                             class="fal fa-envelope"></i></a>
                 </div>
                 <div class="col-md-4">

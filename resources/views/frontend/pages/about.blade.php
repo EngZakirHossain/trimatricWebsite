@@ -15,7 +15,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg" data-bg="{{asset('frontend/images//all/3.jpg')}}"></div>
+                <div class="bg" data-bg="{{asset('frontend/images/bg/21.jpg')}}"></div>
                 <div class="overlay"></div>
                 <div class="progress-bar-wrap bot-element">
                     <div class="progress-bar"></div>
@@ -57,7 +57,7 @@
                         <div class="column-wrap-content fl-wrap">
                             <div class="column-wrap-media fl-wrap">
                                 <div class="pr-bg pr-bg-white"></div>
-                                <img src="{{asset('frontend/images//all/8.jpg')}}" class="respimg" alt="">
+                                <img src="{{asset('frontend/images/bg/8.jpg')}}" class="respimg" alt="">
                                 <a href="https://vimeo.com/56930191"
                                    class="column-wrap-media_btn color-bg image-popup">
                                     Our Story Video <i class="fas fa-play"></i>
@@ -426,17 +426,15 @@
                                 <div class="testilider fl-wrap" data-effects="slide">
                                     <div class="pr-bg pr-bg-white"></div>
                                     <div class="swiper-container">
-                                        <div class="swiper-wrapper">
+                                        <div class="swiper-wrapper ">
                                             <!-- swiper-slide -->
-                                            <div class="swiper-slide">
-                                                     <img style="height: 100px; width: 100px" src="{{asset('frontend/images/clients/1.png')}}" alt="">
-                                            </div>
-                                            <div class="swiper-slide">
-                                                    <img style="height: 100px; width: 100px"  src="{{asset('frontend/images/clients/2.png')}}" alt="">
-                                            </div>
-                                            <div class="swiper-slide">
-                                                    <img style="height: 100px; width: 100px"  src="{{asset('frontend/images/clients/3.png')}}" alt="">
-                                            </div>
+                                            @foreach($clients as $key=>$row)
+                                                <div class="swiper-slide">
+                                                    <div class="testi-item fl-wrap" >
+                                                       <img src="{{asset('backend/uploads/clients/')}}/{{$row->photo}}" alt="">
+                                                    </div>
+                                                </div>
+                                                @endforeach
                                             <!-- swiper-slide end-->
                                         </div>
                                         <div class="testilider-controls">
@@ -452,7 +450,7 @@
                         </div>
                         <div class="section-number right_sn">
                             <div class="pr-bg pr-bg-white"></div>
-                            <span>0</span>3.
+                            <span>0</span>4.
                         </div>
                     </div>
                 </section>

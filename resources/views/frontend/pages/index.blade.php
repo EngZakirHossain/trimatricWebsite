@@ -34,7 +34,7 @@
                                 <h1><span>{{$row->title}} </span></h1>
                                 <h4>{{$row->description}} </h4>
                                 <div class="clearfix"></div>
-                                <a href="#" class="half-hero-wrap_link ajax">View Project <i class="fal fa-long-arrow-right"></i></a>
+                                <a href="{{route('frontend.project')}}" class="half-hero-wrap_link ajax">View Project <i class="fal fa-long-arrow-right"></i></a>
                             </div>
                         </div>
                         <!-- swiper-slide end-->

@@ -848,7 +848,7 @@ function initTheside() {
             format: 'png'
         }).addTo(map);
         var greenIcon = L.icon({
-            iconUrl: 'images/marker.png',
+            iconUrl: 'frontend/images/marker.png',
             iconSize: [40, 40],
             popupAnchor: [0, -26]
         });

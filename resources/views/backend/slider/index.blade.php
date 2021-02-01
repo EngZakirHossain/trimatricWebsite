@@ -178,7 +178,7 @@
                         };
                         $.ajax({
                             type:"POST",
-                            url:"{{ route('slider.delete') }}",
+                            url:"{{route('slider.delete')}}",
                             data: data,
                             success: function (response){
                                 Swal.fire(

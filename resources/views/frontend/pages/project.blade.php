@@ -15,7 +15,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg" data-bg="images/bg/13.jpg"></div>
+            <div class="bg" data-bg="{{asset('frontend/images/bg/20.jpg')}}"></div>
             <div class="overlay"></div>
             <div class="progress-bar-wrap bot-element">
                 <div class="progress-bar"></div>
@@ -64,8 +64,9 @@
                     <div class="grid-det">
                         <div class="grid-det_category"><a href="#">Architecture</a> <a
                                 href="#">Design</a></div>
+
                         <div class="grid-det-item">
-                            <a href="{{route('frontend.singleProject',[$row->id])}}" class="ajax grid-det_link">{{$row->title}} <i
+                            <a href="{{route('frontend.singleProject',[Crypt::encrypt($row->id)])}}" class="ajax grid-det_link">{{$row->title}} <i
                                     class="fal fa-long-arrow-right"></i></a>
                         </div>
                     </div>

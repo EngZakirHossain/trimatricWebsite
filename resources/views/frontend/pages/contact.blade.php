@@ -46,7 +46,7 @@
                         <div class="column-wrap-content fl-wrap">
                             <div class="column-wrap-media fl-wrap">
                                 <div class="pr-bg pr-bg-white"></div>
-                                <img src="images/contactus1920x1080.jpg" class="respimg" alt="">
+                                <img src="{{asset('frontend/images/contactus1920x1080.jpg')}}" class="respimg" alt="">
                                 <div class="cont-det-wrap dark-bg">
                                     <div class="pr-bg pr-bg-white"></div>
                                     <ul>
@@ -76,45 +76,26 @@
                         <div id="contact-form">
                             <div class="pr-bg pr-bg-white"></div>
                             <div id="message"></div>
-                            <form class="custom-form" action="http://theside.kwst.net/php/contact.php"
-                                  name="contactform" id="contactform">
+                            <form class="custom-form" action="{{route('contact.store')}}" method="post">
+                                @csrf
                                 <fieldset>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <input type="text" name="name" id="name"
-                                                   placeholder="Your Name *" value="" />
+                                            <input type="text" name="name" id="name" placeholder="Your Name *"/>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="text" name="email" id="email"
-                                                   placeholder="Email Address *" value="" />
+                                            <input type="text" name="phone" id="phone" placeholder="Phone *" />
                                         </div>
-                                        <div class="col-md-6">
-                                            <input type="text" name="phone" id="phone" placeholder="Phone *"
-                                                   value="" />
+                                        <div class="col-md-12">
+                                            <input type="text" name="email" id="email" placeholder="Email Address *"/>
                                         </div>
-                                        <!-- <div class="col-md-6">
-                                                <select name="subject" id="subject" data-placeholder="Subject" class="chosen-select sel-dec">
-                                                    <option>Subject</option>
-                                                    <option value="Order Project">Order Project</option>
-                                                    <option value="Support">Support</option>
-                                                    <option value="Other Question">Other Question</option>
-                                                </select>
-                                            </div> -->
+                                       <div class="col-md-12">
+                                           <input type="text" name="subject" id="subject" placeholder="subject *" >
+                                       </div>
                                     </div>
-                                    <textarea name="comments" id="comments" cols="40" rows="3"
-                                              placeholder="Your Message:"></textarea>
-                                    <!-- <div class="verify-wrap">
-                                            <span class="verify-text"> How many gnomes were in the story about the "Snow-white" ?</span>
-                                            <select name="verify" id="verify" data-placeholder="0" class="chosen-select">
-                                                <option>0</option>
-                                                <option value="9">9</option>
-                                                <option value="5">5</option>
-                                                <option value="7">7</option>
-                                                <option value="2">2</option>
-                                            </select>
-                                        </div> -->
+                                    <textarea name="message" id="message" cols="40" rows="3" placeholder="Your Message:"></textarea>
                                     <div class="clearfix"></div>
-                                    <button class="btn float-btn flat-btn color-bg" id="submit">Send Message
+                                    <button class="btn float-btn flat-btn color-bg" type="submit" id="submit">Send Message
                                         <i class="fal fa-long-arrow-right"></i></button>
                                 </fieldset>
                             </form>

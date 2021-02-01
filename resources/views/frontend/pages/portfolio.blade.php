@@ -17,7 +17,6 @@
                         <a href="#" class="gallery-filter " data-filter=".RELIGIOUS">RELIGIOUS</a>
                         <a href="#" class="gallery-filter " data-filter=".EXTERIOR">EXTERIOR</a>
                         <a href="#" class="gallery-filter " data-filter=".INTERIOR">INTERIOR</a>
-                        <a href="#" class="gallery-filter " data-filter=".INTERIOR">INTERIOR</a>
                         <a href="#" class="gallery-filter " data-filter=".RESIDENTIAL">RESIDENTIAL</a>
                         <div class="folio-counter">
                         <div class="num-album"></div>
@@ -35,22 +34,16 @@
                 <div class="horizontal-grid-wrap  fl-wrap  ">
                     <!-- portfolio start -->
                     <div id="portfolio_horizontal_container" class="three-ver-columns">
-                        <!-- portfolio_item-->
-                        <div class="portfolio_item ">
-                            <div class="grid-item-holder">
-                                <img src="" alt="">
-                                <div class="grid-det">
-                                    <div class="grid-det_category"><a href="#">Architecture</a> <a href="#">Design</a>
+                        @foreach( $portfolios as $key=>$row)
+                            <!-- portfolio_item-->
+                                <div class="portfolio_item {{$row->cat_name}} ">
+                                    <div class="grid-item-holder">
+                                        <img src="{{asset('backend/uploads/projects')}}/{{$row->photo}}" alt="">
                                     </div>
-                                    <div class="grid-det-item">
-                                        <a href="" class="ajax grid-det_link"><i
-                                                class="fal fa-long-arrow-right"></i></a>
-                                    </div>
+                                    <div class="pr-bg"></div>
                                 </div>
-                            </div>
-                            <div class="pr-bg"></div>
-                        </div>
-                        <!-- portfolio_item end-->
+                                <!-- portfolio_item end-->
+                        @endforeach
                     </div>
                     <!-- portfolio end -->
                 </div>
@@ -60,5 +53,5 @@
             <!--column-wrap end-->
             <div class="limit-box fl-wrap"></div>
         </div>
-    @include('frontend.layouts.partials.footerContent')
+{{--    @include('frontend.layouts.partials.footerContent')--}}
 @endsection

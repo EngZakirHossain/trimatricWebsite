@@ -1,73 +1,120 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+<!-- Mirrored from kanakku.dreamguystech.com/template-html/blank-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Dec 2020 08:38:23 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>@yield('title')</title>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('backend/img/favicon.ico') }}">
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('backend/css/bootstrap.min.css') }}">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('backend/css/all.min.css') }}">
 
-                            <div class="col-md-6">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="{{ asset('backend/plugins/fontawesome/css/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/plugins/fontawesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/plugins/fontawesome/css/fontawesome.min.css') }}">
+
+    <!-- Datatables CSS -->
+    <link rel="stylesheet" href="{{ asset('backend/plugins/datatables/datatables.min.css') }}">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ asset('backend/css/style.css') }}">
+
+<!--[if lt IE 9]>
+    <script src="{{ asset('backend/js/html5shiv.min.js') }}"></script>
+    <script src="{{ asset('backend/js/respond.min.js') }}"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="main-wrapper login-body">
+    <div class="login-wrapper">
+        <div class="container">
+
+            <img class="img-fluid logo-dark mb-2" src="{{asset('frontend/images/logo/logo2.png')}}" alt="Logo">
+            <div class="loginbox">
+
+                <div class="login-right">
+                    <div class="login-right-wrap">
+                        <h1 class="text-center">Welcome to Trimatric</h1>
+                        <form method="POST" action="{{ route('login') }}">
+                            @csrf
+                            <div class="form-group">
+                                <label class="form-control-label">Email Address</label>
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <span class="invalid-feedback" role="alert">
+                                                          <strong>{{ $message }}</strong>
+                                                          </span>
                                 @enderror
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
+                            <div class="form-group">
+                                <label class="form-control-label">Password</label>
+                                <div class="pass-group">
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                    @error('password')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
+                                                          <strong>{{ $message }}</strong>
+                                                          </span>
+                                    @enderror
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="custom-control custom-checkbox">
+                                            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                            <label class="custom-control-label" for="cb1">Remember me</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 text-right">
+{{--                                        <a class="forgot-link" href="#">Forgot Password ?</a>--}}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                            <button class="btn btn-lg btn-block btn-primary" type="submit">Login</button>
+{{--                            <div class="text-center dont-have">Don't have an account yet? <a href="#">Register</a></div>--}}
+                        </form>
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-@endsection
+
+<!-- /Main Wrapper -->
+
+<!-- jQuery -->
+<script src="{{ asset('backend/js/jquery-3.5.1.min.js') }}"></script>
+
+<!-- Bootstrap Core JS -->
+<script src="{{ asset('backend/js/popper.min.js') }}"></script>
+<script src="{{ asset('backend/js/bootstrap.min.js') }}"></script>
+
+<!-- Feather Icon JS -->
+<script src="{{ asset('backend/js/feather.min.js') }}"></script>
+<script src="{{ asset('backend/js/summernote.min.js') }}"></script>
+<script src="{{ asset('backend/js/all.min.js') }}"></script>
+
+<!-- Slimscroll JS -->
+<script src="{{ asset('backend/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
+
+<!-- Custom JS -->
+<script src="{{ asset('backend/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('backend/plugins/datatables/datatables.min.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<script src="{{ asset('backend/js/script.js') }}"></script>
+@yield('scripts')
+</body>
+
+<!-- Mirrored from kanakku.dreamguystech.com/template-html/blank-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Dec 2020 08:38:23 GMT -->
+</html>
+

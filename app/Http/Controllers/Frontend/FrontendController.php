@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Client;
 use App\Http\Controllers\Controller;
+use App\Portfolio;
 use App\Project;
 use App\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\DB;
 
 class FrontendController extends Controller
 {
@@ -15,7 +19,8 @@ class FrontendController extends Controller
         return view('frontend.pages.index',compact('sliders'));
     }
     public  function about (){
-        return view('frontend.pages.about');
+        $clients= Client::all();
+        return view('frontend.pages.about',compact('clients'));
     }
     public  function service (){
         return view('frontend.pages.service');
@@ -24,15 +29,19 @@ class FrontendController extends Controller
         return view('frontend.pages.contact');
     }
     public  function portfolio (){
-        return view('frontend.pages.portfolio');
+        $portfolios = DB::table('portfolios')
+            ->join('projects','projects.id','=','portfolios.project_id')
+            ->select('projects.cat_name','projects.title','projects.id','portfolios.*')
+            ->get();
+        return view('frontend.pages.portfolio',compact('portfolios'));
     }
     public  function project (){
         $projects = Project::orderBy('id','desc')->get();
         return view('frontend.pages.project',compact('projects'));
     }
     public  function singleProject ($id){
+        $id = Crypt::decrypt($id);
         $projects = Project::where('id',$id)->first();
         return view('frontend.pages.singleProject',compact('projects'));
     }
-
 }
