@@ -218,7 +218,7 @@
                                         class="fal fa-long-arrow-left"></i><span>Prev - Project
                                                     </span></a>
                                 <div class="content-nav_mediatooltip cnmd_leftside"><img
-                                        src="images/folio/4.jpg" alt=""></div>
+                                        src="" alt=""></div>
                             </li>
                             <li>
                                 <a href="{{route('frontend.project')}}" class="ajax list-folio_nav">
@@ -229,7 +229,7 @@
                                 <a href="#" class="rn ajax"><span>Next - Project
                                                     </span> <i class="fal fa-long-arrow-right"></i></a>
                                 <div class="content-nav_mediatooltip cnmd_rightside"><img
-                                        src="images/folio/5.jpg" alt=""></div>
+                                        src="" alt=""></div>
                             </li>
                         </ul>
                     </div>

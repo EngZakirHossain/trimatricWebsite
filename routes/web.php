@@ -51,7 +51,7 @@ Route::group(['prefix'=>'backend-client','as'=>'client.'], function (){
     Route::post('/all-client', 'Backend\ClientController@store')->name('store');
     Route::post('/delete', 'Backend\ClientController@destroy')->name('delete');
 });
-Route::post('/store', 'Backend\ContactController@store')->name('store');
+Route::post('/store', 'Backend\ContactController@store')->name('contact.store');
 
 Route::group(['prefix'=>'backend-contact','as'=>'contact.'], function (){
     Route::get('/all-contacts', 'Backend\ContactController@view')->name('allContacts');
