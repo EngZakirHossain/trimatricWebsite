@@ -159,7 +159,7 @@
                                         usu. Pri choro pertinax indoctum ne, ad partiendo persecuti
                                         forensibus est.</p>
                                     <div class="video-box fl-wrap">
-                                        <img src="{{asset('fronted/images/all/7.jpg')}}" class="respimg" alt="">
+                                        <img src="{{asset('fronted/images/bg/8.jpg')}}" class="respimg" alt="">
                                         <a class="video-box-btn image-popup"
                                            href="https://vimeo.com/34741214"><i
                                                 class="fas fa-play"></i></a>
@@ -172,24 +172,24 @@
                                     <div class="palns-gal fl-wrap lightgallery">
                                         <!-- plans-gal_item-->
                                         <div class="plans-gal_item hov_zoom">
-                                            <img src="{{asset('frontend/images/all/1.jpg')}}" alt="" class="respimg">
-                                            <a href="{{asset('frontend/images/all/1.jpg')}}"
+                                            <img src="{{asset('frontend/images/plans/1.jpg')}}" alt="" class="respimg">
+                                            <a href="{{asset('frontend/images/plans/1.jpg')}}"
                                                class="box-media-zoom   popup-image"><i
                                                     class="fal fa-search"></i></a>
                                         </div>
                                         <!-- plans-gal_item end-->
                                         <!-- plans-gal_item-->
                                         <div class="plans-gal_item hov_zoom">
-                                            <img src="{{asset('frontend/images/all/3.jpg')}}" alt="" class="respimg">
-                                            <a href="{{asset('frontend/images/all/3.jpg')}}"
+                                            <img src="{{asset('frontend/images/plans/3.jpg')}}" alt="" class="respimg">
+                                            <a href="{{asset('frontend/images/plans/3.jpg')}}"
                                                class="box-media-zoom   popup-image"><i
                                                     class="fal fa-search"></i></a>
                                         </div>
                                         <!-- plans-gal_item end-->
                                         <!-- plans-gal_item-->
                                         <div class="plans-gal_item hov_zoom">
-                                            <img src="{{asset('frontend/images/all/4.jpg')}}" alt="" class="respimg">
-                                            <a href="{{asset('frontend/images/all/4.jpg')}}"
+                                            <img src="{{asset('frontend/images/plans/4.jpg')}}" alt="" class="respimg">
+                                            <a href="{{asset('frontend/images/plans/4.jpg')}}"
                                                class="box-media-zoom   popup-image"><i
                                                     class="fal fa-search"></i></a>
                                         </div>
