@@ -30,7 +30,7 @@ class PortfolioController extends Controller
             //upload profile photo start
             $image = $request->file('photo');
             $name = "$request->project_id".'('."$current_id".')'.".".$image->getClientOriginalExtension();
-            $destination = public_path('uploads/projects/');
+            $destination = ('uploads/projects/');
             $image->move($destination,$name);
             Portfolio::findOrFail($current_id)->update([
                 'photo' => $name,

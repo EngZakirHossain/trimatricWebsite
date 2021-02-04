@@ -40,7 +40,7 @@ class ProjectController extends Controller
             //upload profile photo start
             $image = $request->file('photo');
             $name = 'project'."$current_id".".".$image->getClientOriginalExtension();
-            $destination = public_path('uploads/projects/');
+            $destination = ('uploads/projects');
             $image->move($destination,$name);
             Project::findOrFail($current_id)->update([
                 'photo' => $name,

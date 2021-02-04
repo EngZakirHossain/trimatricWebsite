@@ -32,7 +32,7 @@ class SliderController extends Controller
             //upload profile photo start
             $image = $request->file('photo');
             $name = 'slider'."$current_id".".".$image->getClientOriginalExtension();
-            $destination = public_path('uploads/slider_photos/');
+            $destination = ('uploads/slider/');
             $image->move($destination,$name);
             Slider::findOrFail($current_id)->update([
                 'photo' => $name,
