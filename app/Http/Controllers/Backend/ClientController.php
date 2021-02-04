@@ -31,7 +31,7 @@ class ClientController extends Controller
             //upload profile photo start
             $image = $request->file('photo');
             $name = 'client'."$current_id".".".$image->getClientOriginalExtension();
-            $destination = public_path('backend/uploads/clients/');
+            $destination = public_path('uploads/clients/');
             $image->move($destination,$name);
             Client::findOrFail($current_id)->update([
                 'photo' => $name,
@@ -46,13 +46,11 @@ class ClientController extends Controller
     public function destroy(Request $request)
     {
         $name = Client::findOrFail($request->id)->photo;
-        $old_photo_location = public_path('backend/uploads/clients/').$name;
+        $old_photo_location = public_path('uploads/clients/').$name;
         unlink($old_photo_location);
 
         $slider_delete = Client::findOrFail($request->id);
         $slider_delete->delete();
-
-        return back()->with('message','Slider Delete Successfully');
-
+        return back()->with('message','Client Delete Successfully');
     }
 }

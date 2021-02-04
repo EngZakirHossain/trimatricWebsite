@@ -30,7 +30,7 @@ class PortfolioController extends Controller
             //upload profile photo start
             $image = $request->file('photo');
             $name = "$request->project_id".'('."$current_id".')'.".".$image->getClientOriginalExtension();
-            $destination = public_path('backend/uploads/projects/');
+            $destination = public_path('uploads/projects/');
             $image->move($destination,$name);
             Portfolio::findOrFail($current_id)->update([
                 'photo' => $name,
@@ -45,7 +45,7 @@ class PortfolioController extends Controller
     public function destroy(Request $request)
     {
         $name = Portfolio::findOrFail($request->id)->photo;
-        $old_photo_location = public_path('backend/uploads/projects/').$name;
+        $old_photo_location = public_path('uploads/projects/').$name;
         unlink($old_photo_location);
 
         $slider_delete = Portfolio::findOrFail($request->id);

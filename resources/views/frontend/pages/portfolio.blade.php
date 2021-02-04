@@ -38,7 +38,7 @@
                             <!-- portfolio_item-->
                                 <div class="portfolio_item {{$row->cat_name}} ">
                                     <div class="grid-item-holder">
-                                        <img src="{{asset('backend/uploads/projects')}}/{{$row->photo}}" alt="">
+                                        <img src="{{asset('uploads/projects')}}/{{$row->photo}}" alt="">
                                     </div>
                                     <div class="pr-bg"></div>
                                 </div>

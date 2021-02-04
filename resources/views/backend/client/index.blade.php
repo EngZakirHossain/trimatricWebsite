@@ -115,9 +115,10 @@
 
                                         <tr>
                                             <input class="Delete_val_id" type="hidden" name="id" value="{{ $row->id }}">
+
                                             <td>
                                                 <h2 class="table-avatar">
-                                                    <a href="#"><img class="avatar avatar-lg ml-2 avatar-img rounded-circle" src=" {{ asset('backend/uploads/clients') }}/{{ $row->photo }}" alt="slider Image"></a>
+                                                    <a href="#"><img class="avatar avatar-lg ml-2 avatar-img rounded-circle" src="{{asset('uploads/clients/'.$row->photo)}}" alt="slider Image"></a>
                                                 </h2>
                                             </td>
                                             <td>{{ $row->title }}</td>

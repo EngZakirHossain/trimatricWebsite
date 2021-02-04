@@ -32,7 +32,7 @@ class SliderController extends Controller
             //upload profile photo start
             $image = $request->file('photo');
             $name = 'slider'."$current_id".".".$image->getClientOriginalExtension();
-            $destination = public_path('backend/uploads/slider_photos/');
+            $destination = public_path('uploads/slider_photos/');
             $image->move($destination,$name);
             Slider::findOrFail($current_id)->update([
                 'photo' => $name,
@@ -47,7 +47,7 @@ class SliderController extends Controller
     public function destroy(Request $request)
     {
         $name = Slider::findOrFail($request->id)->photo;
-        $old_photo_location = public_path('backend/uploads/slider_photos/').$name;
+        $old_photo_location = public_path('uploads/slider_photos/').$name;
         unlink($old_photo_location);
 
         $slider_delete = Slider::findOrFail($request->id);

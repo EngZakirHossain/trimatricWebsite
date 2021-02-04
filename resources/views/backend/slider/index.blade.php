@@ -117,7 +117,7 @@
                                             <input class="sliderDelete_val_id" type="hidden" name="id" value="{{ $slider_info->id }}">
                                             <td>
                                                 <h2 class="table-avatar">
-                                                    <a href="#"><img class="avatar avatar-lg ml-2 avatar-img rounded-circle" src=" {{ asset('backend/uploads/slider_photos') }}/{{ $slider_info->photo }}" alt="slider Image"></a>
+                                                    <a href="#"><img class="avatar avatar-lg ml-2 avatar-img rounded-circle" src=" {{ asset('uploads/slider_photos') }}/{{ $slider_info->photo }}" alt="slider Image"></a>
                                                 </h2>
                                             </td>
                                             <td>{{ $slider_info->title }}</td>

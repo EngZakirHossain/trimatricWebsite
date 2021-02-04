@@ -430,8 +430,8 @@
                                             <!-- swiper-slide -->
                                             @foreach($clients as $key=>$row)
                                                 <div class="swiper-slide">
-                                                    <div class="testi-item fl-wrap" >
-                                                       <img src="{{asset('backend/uploads/clients/')}}/{{$row->photo}}" alt="">
+                                                    <div class="testi-item fl-wrap"  >
+                                                       <img src="{{asset('uploads/clients/')}}/{{$row->photo}}" style="height: 180px; width: 180px" alt="">
                                                     </div>
                                                 </div>
                                                 @endforeach

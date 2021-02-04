@@ -58,7 +58,7 @@
 
                     <!-- swiper-slide-->
                     <div class="swiper-slide">
-                        <div class="bg"  data-bg="{{asset('backend/uploads/slider_photos')}}/{{$row->photo}}"></div>
+                        <div class="bg"  data-bg="{{asset('uploads/slider_photos')}}/{{$row->photo}}"></div>
                         <div class="overlay"></div>
                     </div>
                     <!-- swiper-slide end-->
