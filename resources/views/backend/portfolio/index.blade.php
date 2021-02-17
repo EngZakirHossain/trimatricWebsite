@@ -53,7 +53,7 @@
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
-                                                            <label for="">Photo(Recomeded: 500*350px)<span class="text-danger">*</span></label>
+                                                            <label for="">Photo(Recommended: 500*350px)<span class="text-danger">*</span></label>
                                                             <input class="form-control" type="file" name="photo">
                                                             @error ('photo')
                                                             <span class="text-danger">{{ $message }}</span>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from kanakku.dreamguystech.com/template-html/blank-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Dec 2020 08:38:23 GMT -->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -26,10 +25,7 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ asset('backend/css/style.css') }}">
 
-    <!--[if lt IE 9]>
-    <script src="{{ asset('backend/js/html5shiv.min.js') }}"></script>
-    <script src="{{ asset('backend/js/respond.min.js') }}"></script>
-    <![endif]-->
+    @yield('css')
 </head>
 <body>
 
@@ -116,10 +112,18 @@
                     <li class="@yield('client')" >
                         <a href="{{ route('client.index') }}"><i class="fas fa-user-circle"></i> <span>Client</span></a>
                     </li>
+                    <li class="@yield('circular')" >
+                        <a href="{{ route('circular.create') }}"><i class="fas fa-user-circle"></i> <span>Circular</span></a>
+                    </li>
+                    <li class="@yield('circular_list')" >
+                        <a href="{{ route('circular.index') }}"><i class="fas fa-toolbox"></i> <span>Circular List</span></a>
+                    </li>
+                    <li class="@yield('cv')" >
+                        <a href="{{ route('cv.list.index') }}"><i class="fas fa-user-circle"></i> <span>CV</span></a>
+                    </li>
                     <li class="@yield('news')" >
                         <a href="{{ route('contact.allContacts') }}"><i class="fas fa-user-circle"></i> <span>News Letter</span></a>
                     </li>
-
                 </ul>
             </div>
         </div>

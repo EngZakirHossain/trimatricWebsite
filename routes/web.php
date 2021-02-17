@@ -25,9 +25,16 @@ Route::group(['as'=>'frontend.'], function (){
     Route::get('/project', 'Frontend\FrontendController@project')->name('project');
     Route::get('/project/{id}', 'Frontend\FrontendController@singleProject')->name('singleProject');
     Route::get('/portfolio', 'Frontend\FrontendController@portfolio')->name('portfolio');
+    Route::get('/career', 'Frontend\FrontendController@career')->name('career');
+    Route::resource('/cv', 'Frontend\CvController');
+
 });
 
-Auth::routes();
+Auth::routes([
+    'register' => false, // Registration Routes...
+    'reset' => false, // Password Reset Routes...
+    'verify' => false, // Email Verification Routes...
+]);
 
 Route::get('/backend-dashboard', 'HomeController@index')->name('home');
 
@@ -57,3 +64,14 @@ Route::group(['prefix'=>'backend-contact','as'=>'contact.'], function (){
     Route::get('/all-contacts', 'Backend\ContactController@view')->name('allContacts');
     Route::post('/delete', 'Backend\ContactController@destroy')->name('delete');
 });
+
+Route::group(['prefix'=>'backend-career','as'=>'circular.'], function (){
+   Route::get('/create', 'Backend\CareerControler@create')->name('create');
+   Route::post('/store', 'Backend\CareerControler@store')->name('store');
+   Route::get('/list', 'Backend\CareerControler@index')->name('index');
+});
+
+Route::group(['prefix'=>'backend-cv','as'=>'cv.'], function (){
+   Route::resource('/list', 'Frontend\CvController');
+});
+

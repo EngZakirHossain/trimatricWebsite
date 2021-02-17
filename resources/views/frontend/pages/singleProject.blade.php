@@ -32,19 +32,19 @@
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide hov_zoom">
-                            <img src="{{asset('backend/uploads/projects')}}/{{$projects->photo}}" alt="">
-                            <a href="{{asset('backend/uploads/projects')}}/{{$projects->photo}}" class="box-media-zoom   popup-image"><i
+                            <img src="{{asset('uploads/projects')}}/{{$projects->photo}}" alt="">
+                            <a href="{{asset('uploads/projects')}}/{{$projects->photo}}" class="box-media-zoom   popup-image"><i
                                     class="fal fa-search"></i></a>
                             <div class="pr-bg"></div>
                         </div>
-                    @php
-                        $portfolio = \App\Portfolio::where('project_id',$projects->id)->get();
-                    @endphp
+                        @php
+                            $portfolio = \App\Portfolio::where('project_id',$projects->id)->get();
+                        @endphp
                         <!-- swiper-slide-->
                         @foreach($portfolio as $pro)
                         <div class="swiper-slide hov_zoom">
-                                <img src="{{asset('backend/uploads/projects')}}/{{$pro->photo}}" alt="">
-                                <a href="{{asset('backend/uploads/projects')}}/{{$pro->photo}}" class="box-media-zoom   popup-image"><i
+                                <img src="{{asset('uploads/projects')}}/{{$pro->photo}}" alt="">
+                                <a href="{{asset('uploads/projects')}}/{{$pro->photo}}" class="box-media-zoom   popup-image"><i
                                         class="fal fa-search"></i></a>
                                 <div class="pr-bg"></div>
                         </div>

@@ -44,4 +44,7 @@ class FrontendController extends Controller
         $projects = Project::where('id',$id)->first();
         return view('frontend.pages.singleProject',compact('projects'));
     }
+    public function career(){
+        return view('frontend.pages.career');
+    }
 }
