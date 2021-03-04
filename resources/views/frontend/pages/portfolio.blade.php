@@ -31,7 +31,7 @@
                 </div>
                 <!--filter-panel end-->
                 <!-- portfolio start -->
-                <div class="horizontal-grid-wrap  fl-wrap  ">
+                <div class="horizontal-grid-wrap fl-wrap">
                     <!-- portfolio start -->
                     <div id="portfolio_horizontal_container" class="three-ver-columns">
                         @foreach( $portfolios as $key=>$row)

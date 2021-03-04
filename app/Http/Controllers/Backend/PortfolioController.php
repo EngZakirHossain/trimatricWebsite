@@ -42,6 +42,10 @@ class PortfolioController extends Controller
 
     }
 
+    public function edit(){
+
+    }
+
     public function destroy(Request $request)
     {
         $name = Portfolio::findOrFail($request->id)->photo;

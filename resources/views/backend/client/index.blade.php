@@ -125,23 +125,22 @@
                                             <td>{!! \Illuminate\Support\Str::limit($row->link, 20)  !!}</td>
 
                                             <td class="text-right">
-                                                        <a href="#" class="btn btn-sm btn-white text-danger sweet_delete mr-2"><i class="far fa-trash-alt mr-1"></i>Delete</a>
-
+                                                <a href="#" class="btn btn-sm btn-white text-danger sweet_delete mr-2">
+                                                    <i class="far fa-trash-alt mr-1"></i>
+                                                    Delete
+                                                </a>
                                             </td>
                                         </tr>
-
                                     @empty
                                         <tr>
                                             <td colspan="60">No Client Found</td>
                                         </tr>
                                     @endforelse
-
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

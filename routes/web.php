@@ -27,6 +27,11 @@ Route::group(['as'=>'frontend.'], function (){
     Route::get('/portfolio', 'Frontend\FrontendController@portfolio')->name('portfolio');
     Route::get('/career', 'Frontend\FrontendController@career')->name('career');
     Route::resource('/cv', 'Frontend\CvController');
+    Route::get('client', 'Backend\ClientController@client')->name('client');
+    Route::get('team', 'Frontend\FrontendController@team')->name('team');
+    Route::get('team/team-member', 'Frontend\FrontendController@team_member')->name('team-member');
+    Route::get('blog', 'Frontend\FrontendController@blog')->name('blog');
+    Route::get('blog/details', 'Frontend\FrontendController@blog_view')->name('blog_view');
 
 });
 
@@ -41,7 +46,9 @@ Route::get('/backend-dashboard', 'HomeController@index')->name('home');
 Route::group(['prefix'=>'backend-slider','as'=>'slider.'], function (){
     Route::get('/slider', 'Backend\SliderController@index')->name('index');
     Route::post('/all-slider', 'Backend\SliderController@store')->name('store');
-    Route::post('/delete', 'Backend\SliderController@destroy')->name('delete');
+    Route::post('/delete/{$id}', 'Backend\SliderController@destroy')->name('delete');
+    Route::get('/edit/{$id}', 'Backend\SliderController@edit')->name('edit');
+//    Route::post('/update', 'Backend\SliderController@update')->name('update');
 });
 Route::group(['prefix'=>'backend-projects','as'=>'project.'], function (){
     Route::get('/project', 'Backend\ProjectController@index')->name('index');

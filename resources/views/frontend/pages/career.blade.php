@@ -46,7 +46,7 @@
                         <div class="split-sceen-content_title fl-wrap">
                             <div class="pr-bg pr-bg-white"></div>
                             <h3>Join us and help disrupt the enterprise market!</h3>
-                            <div class="parallax-header"> <a href="#">27 may 2018</a><span>Category : </span><a href="#">Branding</a> <a href="#">Video</a> </div>
+                            <div class="parallax-header"> <a href="#">a{{now()}}</a><span>Category : </span><a href="#">Jobs</a> <a href="#">Career</a> </div>
                         </div>
                         <div class="column-wrap-content fl-wrap">
                             <div class="column-wrap-media fl-wrap">
@@ -70,35 +70,84 @@
                             <div class="column-wrap-text">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="post-opt fl-wrap">
-                                            <div class="pr-bg pr-bg-white"></div>
-                                            <ul>
-                                                <li><a href="#"><i class="fal fa-user"></i> Andy Cooper</a></li>
-                                                <li><a href="#"><i class="fal fa-comments-alt"></i> 12 comments</a></li>
-                                                <li><span><i class="fal fa-eye"></i> 123 view</span></li>
-                                            </ul>
-                                        </div>
                                         <div class="pr-bg pr-bg-white"></div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare sem sed quam tempus aliquet vitae eget dolor. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum. Suspendisse id neque a nibh mollis blandit. Quisque varius eros ac purus dignissim.
-                                            Proin eu ultrices libero.
+                                        <p>Trimatric Architects & Engineers is looking for some bright, proactive, & well experienced persons for the following position.
                                         </p>
                                         <!-- accordion-->
                                         <div class="accordion mar-top">
-                                            <a class="toggle act-accordion" href="#"> Graphics Designer <span></span></a>
-                                            <div class="accordion-inner visible">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra.</p>
-                                                <span>Address: </span>
-                                                <span>Deadline: </span>
-                                            </div>
-                                            <a class="toggle" href="#"> Engineer <span></span></a>
+                                            @php
+                                                $circular = \App\Circular::all();
+                                            @endphp
+                                            @foreach($circular as $key=>$row)
+                                            <a class="toggle" href="#"> {{$row->title}} <span></span></a>
                                             <div class="accordion-inner">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra.</p>
-                                            </div>
-                                            <a class="toggle" href="#"> Details option 3  <span></span></a>
-                                            <div class="accordion-inner">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra.</p>
-                                            </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
 
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        Location
+                                                        <i class="fa fa-map-marker" style="color: #F9BF26"></i> {{$row->workplace}}
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        Vacancy
+                                                        <i class="fa fa-user" style="color: #F9BF26"></i> {{$row->vacancy}}
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        Job Type
+                                                        <i class="fa fa-clock" style="color: #F9BF26"></i>
+                                                        @if($row->type == 1)<p>Full Time</p>@elseif($row->type == 2)<p>Part Time</p>@elseif($row->type == 3)<p>Contractual</p>@elseif($row->type == 4)<p>Intern</p>@endif
+                                                    </div>
+                                                    <br><br>
+                                                    <div class="col-md-6">
+                                                        Published
+                                                        <i class="fa fa-clock" style="color: #F9BF26"></i>
+                                                        {{$row->created_at->diffForHumans()}}
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        Deadline
+                                                        <i class="fa fa-calendar" style="color: #F9BF26"></i>
+                                                        {{$row->date}}
+                                                    </div>
+                                                    <br><br>
+                                                    <div class="col-md-12">
+                                                        <b><u>Job Context</u></b><br>
+                                                        @if($row->job_context == null)
+                                                            Trimatric Architects & Engineers is looking for some bright, proactive, & well experienced persons for the following position.
+                                                        @else
+                                                            {{$row->job_context}}
+                                                        @endif
+                                                    </div>
+                                                    <br><br>
+                                                    <div class="col-md-12">
+                                                        <b><u>Responsibilities</u></b><br>
+                                                        {{$row->responsibilities}}
+                                                    </div>
+                                                    <br><br>
+                                                    <div class="col-md-12">
+                                                        <b><u>Educational Qualification</u></b><br>
+                                                        {{$row->educational}}
+                                                    </div>
+                                                    <br><br>
+                                                    <div class="col-md-12">
+                                                        <b><u>Experience Requirements</u></b><br>
+                                                        {{$row->experience}}
+                                                    </div>
+                                                    <br><br>
+                                                    <div class="col-md-12">
+                                                        <b><u>Additional Requirements</u></b><br>
+                                                        {{$row->additional}}
+                                                    </div>
+                                                    <br><br>
+                                                    <div class="col-md-12">
+                                                        <b><u>Others</u></b><br>
+                                                        {{$row->others}}
+                                                    </div>
+                                                    <br><br>
+
+                                                </div>
+                                            </div>
+                                            @endforeach
                                         </div>
                                         <!-- accordion end -->
                                     </div>

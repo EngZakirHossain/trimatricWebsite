@@ -53,4 +53,9 @@ class ClientController extends Controller
         $slider_delete->delete();
         return back()->with('message','Client Delete Successfully');
     }
+
+    public function client(){
+        $clients = Client::orderBy('id','desc')->get();
+        return view('frontend.pages.client',compact('clients'));
+    }
 }

@@ -88,7 +88,6 @@
                                                                 <button class="btn btn-white">
                                                                     <a href="{{asset('storage/uploads/cv')}}/{{$cv->file}}">Download CV</a>
                                                                 </button>
-
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -98,9 +97,7 @@
                                             </div>
                                             <!-- Modal END -->
                                         </tr>
-
                                         @endforeach
-
                                     </tbody>
                                 </table>
                             </div>

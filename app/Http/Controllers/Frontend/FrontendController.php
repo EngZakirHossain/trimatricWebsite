@@ -47,4 +47,16 @@ class FrontendController extends Controller
     public function career(){
         return view('frontend.pages.career');
     }
+    public function team(){
+        return view('frontend.pages.team_list');
+    }
+    public function team_member(){
+        return view('frontend.pages.team_member');
+    }
+    public function blog(){
+        return view('frontend.pages.blog');
+    }
+    public function blog_view(){
+        return view('frontend.pages.blog_view');
+    }
 }

@@ -202,106 +202,98 @@
                             <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar
                                 neque. Nulla finibus lobortis pulvinar. </p> -->
                         </div>
-                        <!-- team-box   -->
-                        <div class="team-box">
-                            <div class="pr-bg pr-bg-white"></div>
-                            <div class="team-photo">
-                                <div class="overlay"></div>
-                                <img src="https://via.placeholder.com/800x530" alt="" class="respimg">
-                                <ul class="team-social">
-                                    <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                    </li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                                    </li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
-                                </ul>
-                                <a href="#" class="team-contact_btn color-bg"><i
-                                        class="fal fa-envelope"></i></a>
-                            </div>
-                            <div class="team-info">
-                                <h3>Syed Mirshad</h3>
-                                <h4>CEO / Architect</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. </p>
-                            </div>
-                        </div>
-                        <!-- team-box end -->
-                        <!-- team-box   -->
-                        <div class="team-box">
-                            <div class="pr-bg pr-bg-white"></div>
-                            <div class="team-photo">
-                                <div class="overlay"></div>
-                                <img src="https://via.placeholder.com/800x530" alt="" class="respimg">
-                                <ul class="team-social">
-                                    <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                    </li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                                    </li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
-                                </ul>
-                                <a href="#" class="team-contact_btn color-bg"><i
-                                        class="fal fa-envelope"></i></a>
-                            </div>
-                            <div class="team-info">
-                                <h3>Syed Mirshad</h3>
-                                <h4>Architect / Designer</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. </p>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- team-box   -->
+                                <div class="team-box">
+                                    <div class="pr-bg pr-bg-white"></div>
+                                    <div class="team-photo">
+                                        <div class="overlay"></div>
+                                        <img src="https://via.placeholder.com/800x530" alt="" class="respimg">
+                                        <ul class="team-social">
+                                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                            </li>
+                                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                                            </li>
+                                            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
+                                        </ul>
+                                        <a href="#" class="team-contact_btn color-bg"><i
+                                                class="fal fa-envelope"></i></a>
+                                    </div>
+                                    <div class="team-info">
+                                        <h3><a href="{{route('frontend.team-member')}}">Syed Mirshad</a></h3>
+                                        <h4>CEO / Architect</h4>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. </p>
+                                    </div>
+                                </div>
+                                <!-- team-box end -->
                             </div>
                         </div>
-                        <!-- team-box end -->
-                        <!-- team-box   -->
-                        <div class="team-box">
-                            <div class="pr-bg pr-bg-white"></div>
-                            <div class="team-photo">
-                                <div class="overlay"></div>
-                                <img src="https://via.placeholder.com/800x530" alt="" class="respimg">
-                                <ul class="team-social">
-                                    <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                    </li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                                    </li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
-                                </ul>
-                                <a href="#" class="team-contact_btn color-bg"><i
-                                        class="fal fa-envelope"></i></a>
+                        <div class="row">
+                            <!-- team-box   -->
+                            <div class="team-box">
+                                <div class="pr-bg pr-bg-white"></div>
+                                <div class="team-photo">
+                                    <div class="overlay"></div>
+                                    <img src="https://via.placeholder.com/800x530" alt="" class="respimg">
+                                    <ul class="team-social">
+                                        <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                        </li>
+                                        <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                                        </li>
+                                        <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
+                                    </ul>
+                                    <a href="#" class="team-contact_btn color-bg"><i
+                                            class="fal fa-envelope"></i></a>
+                                </div>
+                                <div class="team-info">
+                                    <h3>Syed Mirshad</h3>
+                                    <h4>Architect / Designer</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. </p>
+                                </div>
                             </div>
-                            <div class="team-info">
-                                <h3>Syed Mirshad</h3>
-                                <h4>Architect / Designer</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. </p>
+                            <!-- team-box end -->
+
+                            <!-- team-box   -->
+                            <div class="team-box">
+                                <div class="pr-bg pr-bg-white"></div>
+                                <div class="team-photo">
+                                    <div class="overlay"></div>
+                                    <img src="https://via.placeholder.com/800x530" alt="" class="respimg">
+                                    <ul class="team-social">
+                                        <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                        </li>
+                                        <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                                        </li>
+                                        <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
+                                    </ul>
+                                    <a href="#" class="team-contact_btn color-bg"><i
+                                            class="fal fa-envelope"></i></a>
+                                </div>
+                                <div class="team-info">
+                                    <h3>Syed Mirshad</h3>
+                                    <h4>Architect / Designer</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. </p>
+                                </div>
                             </div>
+                            <!-- team-box end -->
                         </div>
-                        <!-- team-box end -->
-                        <!-- team-box   -->
-                        <div class="team-box">
+                        <a href="" class="pr-view ajax">View Our Awesome Team Member<i class="fal fa-long-arrow-right"></i></a>
+                        <div class="pr-bg pr-bg-white"></div>
+
+                        <a href="{{route('frontend.team')}}"
+                           class="column-wrap-media_btn color-bg pt-5 mt-5">
+                            Our Team Member<i class="fal fa-long-arrow-right"></i>
                             <div class="pr-bg pr-bg-white"></div>
-                            <div class="team-photo">
-                                <div class="overlay"></div>
-                                <img src="https://via.placeholder.com/800x530" alt="" class="respimg">
-                                <ul class="team-social">
-                                    <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                    </li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                                    </li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
-                                </ul>
-                                <a href="#" class="team-contact_btn color-bg"><i
-                                        class="fal fa-envelope"></i></a>
-                            </div>
-                            <div class="team-info">
-                                <h3>Syed Mirshad</h3>
-                                <h4>Photographer / Designer</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. </p>
-                            </div>
-                        </div>
-                        <!-- team-box end -->
+                        </a>
+
                         <div class="section-number right_sn">
                             <div class="pr-bg pr-bg-white"></div>
                             <span>0</span>2.

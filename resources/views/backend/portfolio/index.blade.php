@@ -18,15 +18,12 @@
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
                             <li class="breadcrumb-item active">Portfolio</li>
-
                         </ul>
                     {{-- add user modal start --}}
                     <!-- Button trigger modal -->
                         <a href="#" type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">
-
                             Add Project <i class="fas fa-plus"></i>
                         </a>
-
                         <!-- Modal -->
                         <div class="modal fade"  id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -53,11 +50,11 @@
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
-                                                            <label for="">Photo(Recommended: 500*350px)<span class="text-danger">*</span></label>
-                                                            <input class="form-control" type="file" name="photo">
-                                                            @error ('photo')
-                                                            <span class="text-danger">{{ $message }}</span>
-                                                            @enderror
+                                                        <label for="">Photo(Recommended: 500*350px)<span class="text-danger">*</span></label>
+                                                        <input class="form-control" type="file" name="photo">
+                                                        @error ('photo')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -72,9 +69,6 @@
                             </div>
                         </div>
                         {{-- add user modal end --}}
-
-
-
                     </div>
                 </div>
             </div>
@@ -109,12 +103,11 @@
                                     </thead>
                                     <tbody>
                                     @forelse ($portfolios as $key=>$row)
-
                                         <tr>
                                             <input class="Delete_val_id" type="hidden" name="id" value="{{ $row->id }}">
                                             <td>
                                                 <h2 class="table-avatar">
-                                                    <a href="#"><img class="avatar avatar-lg ml-2 avatar-img " src=" {{ asset('uploads/projects') }}/{{ $row->photo }}" alt="slider Image"></a>
+                                                    <a href="#"><img class="avatar avatar-lg ml-2 avatar-img" src=" {{ asset('uploads/projects') }}/{{ $row->photo }}" alt="slider Image"></a>
                                                 </h2>
                                             </td>
                                             @php
@@ -123,8 +116,10 @@
                                             <td>{{ $projects->title }}</td>
                                             <td>{{ $projects->cat_name }}</td>
                                             <td class="text-right">
-                                                        <a href="#" class="btn btn-sm btn-white text-danger sweet_delete mr-2"><i class="far fa-trash-alt mr-1"></i>Delete</a>
-
+                                                <a href="#" class="btn btn-sm btn-white text-danger sweet_delete mr-2">
+                                                    <i class="far fa-trash-alt mr-1"></i>
+                                                    Delete
+                                                </a>
                                             </td>
                                         </tr>
 
@@ -190,13 +185,9 @@
                                     });
                             }
                         });
-
-
-
                     }
                 })
             });
         } );
     </script>
-
 @endsection
