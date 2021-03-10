@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Backend;
 
-use App\Cv;
 use App\Http\Controllers\Controller;
+use App\Testimonial;
 use Illuminate\Http\Request;
 
-class CvController extends Controller
+class TestimonialController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class CvController extends Controller
      */
     public function index()
     {
-        $cvs = Cv::all();
-        return view('backend.cv.index', compact('cvs'));
+        $testimonial = Testimonial::orderBy('id','desc')->get();
+        return view('backend.testimonial.index', compact('testimonial'));
     }
 
     /**
@@ -39,29 +39,26 @@ class CvController extends Controller
     {
         $this->validate($request,[
             'name' => 'required',
-            'phone' => 'required',
-            'email' => 'required',
-            'position' => 'required',
             'description' => 'required',
-            'file' => 'required|file|mimes:doc,pdf,docx|max:10240',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,bmp,gif,svg|max:2048',
         ]);
 
         $data = $request->all();
 
-        if ($request->hasFile('file')) {
-            $file = $request->file('file');
-            $name = $request->name. "." .$request->email. "." .date('Y-m-d'). "." .time(). "." .'cv'. "." .$file->getClientOriginalExtension();
-            $destination = ('/storage/uploads/cv');
-            $file->move($destination, $name);
-            $file_path = $name;
+        if ($request->hasFile('photo')) {
+            $image = $request->file('photo');
+            $name = ($request->name). "." . date('Y-m-d') . "." . time() . "." . 'testimonial' . "." . $image->getClientOriginalExtension();
+            $destination = ('storage/uploads/testimonial');
+            $image->move($destination, $name);
+            $image_url = $name;
         }else{
-            $file = 'Test.cv';
+            $image = 'Testimonial-sample.png';
         }
 
-        $data['file'] = $file_path;
+        $data['photo'] = $image_url;
 
-        Cv::create($data);
-        return redirect()->back()->with('message','CV Submitted Successfully');
+        Testimonial::create($data);
+        return back()->with('message','Testimonial Added Successfully');
     }
 
     /**
@@ -72,6 +69,7 @@ class CvController extends Controller
      */
     public function show($id)
     {
+        //
     }
 
     /**

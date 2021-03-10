@@ -124,6 +124,12 @@
                     <li class="@yield('news')" >
                         <a href="{{ route('contact.allContacts') }}"><i class="fas fa-user-circle"></i> <span>News Letter</span></a>
                     </li>
+                    <li class="@yield('team')" >
+                        <a href="{{ route('team_member.list.index') }}"><i class="fas fa-user-circle"></i> <span>Team Member</span></a>
+                    </li>
+                    <li class="@yield('testimonial')" >
+                        <a href="{{ route('testimonial.testimonial.index') }}"><i class="fas fa-user-circle"></i> <span>Testimonial</span></a>
+                    </li>
                 </ul>
             </div>
         </div>

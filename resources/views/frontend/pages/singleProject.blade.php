@@ -100,11 +100,18 @@
                                     <div class="tc_item">1</div>
                                 </div>
                                 <ul class="tabs-menu fl-wrap">
-                                    <li class="selectedLava"><a href="#tab-1"
-                                                                data-tabnum="1"><span>01.</span>Details</a></li>
-                                    <li><a href="#tab-2" data-tabnum="2"><span>02.</span>Video
-                                            Presentation</a></li>
-                                    <li><a href="#tab-3" data-tabnum="3"><span>03.</span>Plans</a></li>
+                                    <li class="selectedLava">
+                                        <a href="#tab-1" data-tabnum="1">
+                                            <span>01.</span>
+                                            Details
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab-3" data-tabnum="2">
+                                            <span>02.</span>
+                                            Plans
+                                        </a>
+                                    </li>
                                 </ul>
                                 <!-- tab-content-->
                                 <div id="tab-1" class="tab-content">
@@ -150,23 +157,6 @@
                                     </div>
                                 <!-- tab-content end-->
                                 <!-- tab-content-->
-                                <div id="tab-2" class="tab-content">
-                                    <h3 class="pr-subtitle"> Project Presentation.</h3>
-                                    <p> An eros argumentum vel, elit diceret duo eu, quo et aliquid ornatus
-                                        delicatissimi. Cu nam tale ferri utroque, eu habemus albucius mel,
-                                        cu vidit possit ornatus eum. Eu ius postulant salutatus
-                                        definitionem, explicari. Graeci viderer qui ut, at habeo facer solet
-                                        usu. Pri choro pertinax indoctum ne, ad partiendo persecuti
-                                        forensibus est.</p>
-                                    <div class="video-box fl-wrap">
-                                        <img src="{{asset('fronted/images/bg/8.jpg')}}" class="respimg" alt="">
-                                        <a class="video-box-btn image-popup"
-                                           href="https://vimeo.com/34741214"><i
-                                                class="fas fa-play"></i></a>
-                                    </div>
-                                </div>
-                                <!-- tab-content end-->
-                                <!-- tab-content-->
                                 <div id="tab-3" class="tab-content">
                                     <h3 class="pr-subtitle">Plan and sketches of the project.</h3>
                                     <div class="palns-gal fl-wrap lightgallery">
@@ -182,14 +172,6 @@
                                         <div class="plans-gal_item hov_zoom">
                                             <img src="{{asset('frontend/images/plans/3.jpg')}}" alt="" class="respimg">
                                             <a href="{{asset('frontend/images/plans/3.jpg')}}"
-                                               class="box-media-zoom   popup-image"><i
-                                                    class="fal fa-search"></i></a>
-                                        </div>
-                                        <!-- plans-gal_item end-->
-                                        <!-- plans-gal_item-->
-                                        <div class="plans-gal_item hov_zoom">
-                                            <img src="{{asset('frontend/images/plans/4.jpg')}}" alt="" class="respimg">
-                                            <a href="{{asset('frontend/images/plans/4.jpg')}}"
                                                class="box-media-zoom   popup-image"><i
                                                     class="fal fa-search"></i></a>
                                         </div>

@@ -28,8 +28,8 @@ Route::group(['as'=>'frontend.'], function (){
     Route::get('/career', 'Frontend\FrontendController@career')->name('career');
     Route::resource('/cv', 'Frontend\CvController');
     Route::get('client', 'Backend\ClientController@client')->name('client');
-    Route::get('team', 'Frontend\FrontendController@team')->name('team');
-    Route::get('team/team-member', 'Frontend\FrontendController@team_member')->name('team-member');
+    Route::get('/team-member', 'Frontend\FrontendController@team')->name('team');
+    Route::get('team-member/{name}', 'Frontend\FrontendController@team_member')->name('team-member');
     Route::get('blog', 'Frontend\FrontendController@blog')->name('blog');
     Route::get('blog/details', 'Frontend\FrontendController@blog_view')->name('blog_view');
 
@@ -82,3 +82,10 @@ Route::group(['prefix'=>'backend-cv','as'=>'cv.'], function (){
    Route::resource('/list', 'Frontend\CvController');
 });
 
+Route::group(['prefix' => 'team', 'as'=>'team_member.'], function (){
+    Route::resource('/list', 'Backend\TeamController');
+});
+
+Route::group(['prefix' => 'testimonial', 'as'=>'testimonial.'], function (){
+    Route::resource('/testimonial', 'Backend\TestimonialController');
+});

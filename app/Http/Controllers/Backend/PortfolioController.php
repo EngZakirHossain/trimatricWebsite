@@ -49,7 +49,7 @@ class PortfolioController extends Controller
     public function destroy(Request $request)
     {
         $name = Portfolio::findOrFail($request->id)->photo;
-        $old_photo_location = public_path('uploads/projects/').$name;
+        $old_photo_location = ('uploads/projects/').$name;
         unlink($old_photo_location);
 
         $slider_delete = Portfolio::findOrFail($request->id);

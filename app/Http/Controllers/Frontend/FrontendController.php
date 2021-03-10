@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Portfolio;
 use App\Project;
 use App\Slider;
+use App\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
@@ -50,8 +51,9 @@ class FrontendController extends Controller
     public function team(){
         return view('frontend.pages.team_list');
     }
-    public function team_member(){
-        return view('frontend.pages.team_member');
+    public function team_member($name){
+        $team_members = Team::where('name',$name)->first();
+        return view('frontend.pages.team_member', compact('team_members'));
     }
     public function blog(){
         return view('frontend.pages.blog');

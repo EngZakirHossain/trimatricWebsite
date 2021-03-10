@@ -2142,7 +2142,7 @@ section.hero-section .fs-canvas {
 	height: auto;
 	position: relative;
 	z-index: 1;
-	background: #292929;
+	background: #ffffff;
 	-webkit-transition: all 2000ms cubic-bezier(.19,1,.22,1) 0ms;
 	-webkit-transform: translateZ(0);
     transform: translateZ(0);

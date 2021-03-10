@@ -10,7 +10,7 @@
                 <li><a href="{{route('frontend.portfolio')}}" class="ajax">Portfolio</a></li>
                 <li><a href="{{route('frontend.client')}}" class="ajax">Client</a></li>
                 <li><a href="{{route('frontend.career')}}" class="ajax">Career</a></li>
-                <li><a href="{{route('frontend.blog')}}" class="ajax">Blog</a></li>
+{{--                <li><a href="{{route('frontend.blog')}}" class="ajax">Blog</a></li>--}}
                 <li><a href="{{route('frontend.contact')}}" class="ajax">Contacts</a></li>
                 <li><a href="{{route('login')}}" class="ajax">Login</a></li>
             </ul>

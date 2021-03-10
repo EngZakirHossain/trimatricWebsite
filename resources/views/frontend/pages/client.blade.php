@@ -33,22 +33,21 @@
         <!--fixed-column-wrap end-->
         <!--column-wrap-->
         <div class="column-wrap">
-            <div class="gallery-items min-pad   two-column fl-wrap">
-                @foreach($clients as $key=>$row)
+            <div class="gallery-items min-pad two-column fl-wrap">
+            @foreach($clients as $key=>$row)
                 <!-- gallery-item-->
-                <div class="gallery-item interior design">
-                    <div class="grid-item-holder">
-                        <img  src="{{asset('uploads/clients')}}/{{$row->photo}}"  alt="">
-                        <div class="grid-det">
-                            <div class="grid-det_category"><a href="#">Architecture</a> <a href="#">Design</a></div>
-                            <div class="grid-det-item">
-                                <a href="portfolio-single.html" class="ajax grid-det_link">Norway House <i class="fal fa-long-arrow-right"></i></a>
+                    <div class="gallery-item interior design">
+                        <div class="grid-item-holder">
+                            <img  src="{{asset('uploads/clients')}}/{{$row->photo}}" style="height: 200px; width: 200px;" alt="">
+                            <div class="grid-det">
+                                <div class="grid-det-item">
+                                    <a href="https://{{$row->link}}" class="ajax grid-det_link" target="_blank">{{$row->title}}</a>
+                                </div>
                             </div>
                         </div>
+                        <div class="pr-bg"></div>
                     </div>
-                    <div class="pr-bg"></div>
-                </div>
-                <!-- gallery-item end-->
+                    <!-- gallery-item end-->
                 @endforeach
             </div>
         </div>
