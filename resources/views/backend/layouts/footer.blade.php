@@ -12,6 +12,11 @@
 <script src="{{ asset('backend/js/summernote.min.js') }}"></script>
 <script src="{{ asset('backend/js/all.min.js') }}"></script>
 
+<!--[if lt IE 9]-->
+<script src="{{ asset('backend/js/html5shiv.min.js') }}"></script>
+<script src="{{ asset('backend/js/respond.min.js') }}"></script>
+<!--[endif]-->
+
 <!-- Slimscroll JS -->
 <script src="{{ asset('backend/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
 
@@ -21,8 +26,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <script src="{{ asset('backend/js/script.js') }}"></script>
-@yield('scripts')
+@yield('js')
 </body>
 
-<!-- Mirrored from kanakku.dreamguystech.com/template-html/blank-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Dec 2020 08:38:23 GMT -->
 </html>

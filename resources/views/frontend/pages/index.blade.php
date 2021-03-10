@@ -34,7 +34,7 @@
                                 <h1><span>{{$row->title}} </span></h1>
                                 <h4>{{$row->description}} </h4>
                                 <div class="clearfix"></div>
-                                <a href="#" class="half-hero-wrap_link ajax">View Project <i class="fal fa-long-arrow-right"></i></a>
+                                <a href="{{route('frontend.project')}}" class="half-hero-wrap_link ajax">View Project <i class="fal fa-long-arrow-right"></i></a>
                             </div>
                         </div>
                         <!-- swiper-slide end-->
@@ -58,10 +58,11 @@
 
                     <!-- swiper-slide-->
                     <div class="swiper-slide">
-                        <div class="bg"  data-bg="{{asset('backend/uploads/slider_photos')}}/{{$row->photo}}"></div>
+                        <div class="bg"  data-bg="{{asset('storage/uploads/slider')}}/{{$row->photo}}"></div>
                         <div class="overlay"></div>
                     </div>
                     <!-- swiper-slide end-->
+
                 @endforeach
                 </div>
             </div>

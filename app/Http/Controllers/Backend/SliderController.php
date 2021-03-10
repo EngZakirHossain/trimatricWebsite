@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Slider;
 use Carbon\Carbon;
+use File;
 use Illuminate\Http\Request;
 
 class SliderController extends Controller
@@ -31,8 +32,8 @@ class SliderController extends Controller
 
             //upload profile photo start
             $image = $request->file('photo');
-            $name = 'slider'."$current_id".".".$image->getClientOriginalExtension();
-            $destination = public_path('backend/uploads/slider_photos/');
+            $name = ($request->title). "." . date('Y-m-d') . "." . time() . "." . 'slider' . "." . $image->getClientOriginalExtension();
+            $destination = ('/storage/uploads/slider');
             $image->move($destination,$name);
             Slider::findOrFail($current_id)->update([
                 'photo' => $name,
@@ -44,16 +45,29 @@ class SliderController extends Controller
 
     }
 
-    public function destroy(Request $request)
+    public function edit($id){
+        $slider = Slider::find($id);
+        return view('backend.slider.edit', compact('slider'));
+    }
+
+    public function update(Request $request){
+
+    }
+
+
+    public function destroy($id)
     {
-        $name = Slider::findOrFail($request->id)->photo;
-        $old_photo_location = public_path('backend/uploads/slider_photos/').$name;
-        unlink($old_photo_location);
+//        dd($id);
+        $image = Slider::findOrFail($id);
+        $image_path = ("/storage/uploads/slider/{$image->photo}");
 
-        $slider_delete = Slider::findOrFail($request->id);
+        if (File::exists($image_path)) {
+            unlink($image_path);
+        }
+
+        $slider_delete = Slider::find($id);
+
         $slider_delete->delete();
-
-        return back()->with('message','Slider Delete Successfully');
-
+        return redirect()->back()->with('message','Slider Delete Successfully');
     }
 }

@@ -31,20 +31,24 @@
                  data-mousecontrol="0">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <!-- swiper-slide-->
                         <div class="swiper-slide hov_zoom">
-                            <img src="{{asset('backend/uploads/projects')}}/{{$projects->photo}}" alt="">
-                            <a href="{{asset('backend/uploads/projects')}}/{{$projects->photo}}" class="box-media-zoom   popup-image"><i
+                            <img src="{{asset('uploads/projects')}}/{{$projects->photo}}" alt="">
+                            <a href="{{asset('uploads/projects')}}/{{$projects->photo}}" class="box-media-zoom   popup-image"><i
                                     class="fal fa-search"></i></a>
-                            <div class="show-info">
-                                <span>Info</span>
-                                <div class="tooltip-info">
-                                    <h5>{{$projects->title}}</h5>
-                                    <p>{{$projects->description}}</p>
-                                </div>
-                            </div>
                             <div class="pr-bg"></div>
                         </div>
+                        @php
+                            $portfolio = \App\Portfolio::where('project_id',$projects->id)->get();
+                        @endphp
+                        <!-- swiper-slide-->
+                        @foreach($portfolio as $pro)
+                        <div class="swiper-slide hov_zoom">
+                                <img src="{{asset('uploads/projects')}}/{{$pro->photo}}" alt="">
+                                <a href="{{asset('uploads/projects')}}/{{$pro->photo}}" class="box-media-zoom   popup-image"><i
+                                        class="fal fa-search"></i></a>
+                                <div class="pr-bg"></div>
+                        </div>
+                            @endforeach
                         <!-- swiper-slide end-->
                     </div>
                 </div>
@@ -76,15 +80,13 @@
                                 <div class="pr-bg pr-bg-white"></div>
                                 <div class="pr-title">
                                     Project Details
-                                    <span>Internet tend to repeat predefined chunks If you are going to use
-                                                    a passage of Lorem Ipsum.</span>
+                                    <span>{{$projects->description}}.</span>
                                 </div>
                                 <ul class="pr-list dark-bg">
-                                    <li><span>Date :</span> 26.05.2014 </li>
-                                    <li><span>Client :</span> House Big </li>
-                                    <li><span>Status :</span> Completed </li>
-                                    <li><span>Location : </span> <a href="https://goo.gl/maps/UzN5m"
-                                                                    target="_blank"> Kharkiv Ukraine </a></li>
+                                    <li><span>Date :</span>{{$projects->project_start}} </li>
+                                    <li><span>Client :</span> {{$projects->title}} </li>
+                                    <li><span>Status :</span> {{$projects->status}} </li>
+                                    <li><span>Location : </span> <a href="#"> {{$projects->project_address}} </a></li>
                                 </ul>
                                 <div class="fixed-column-top"><i class="fal fa-long-arrow-up"></i></div>
                             </div>
@@ -98,27 +100,25 @@
                                     <div class="tc_item">1</div>
                                 </div>
                                 <ul class="tabs-menu fl-wrap">
-                                    <li class="selectedLava"><a href="#tab-1"
-                                                                data-tabnum="1"><span>01.</span>Details</a></li>
-                                    <li><a href="#tab-2" data-tabnum="2"><span>02.</span>Video
-                                            Presentation</a></li>
-                                    <li><a href="#tab-3" data-tabnum="3"><span>03.</span>Plans</a></li>
+                                    <li class="selectedLava">
+                                        <a href="#tab-1" data-tabnum="1">
+                                            <span>01.</span>
+                                            Details
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab-3" data-tabnum="2">
+                                            <span>02.</span>
+                                            Plans
+                                        </a>
+                                    </li>
                                 </ul>
                                 <!-- tab-content-->
                                 <div id="tab-1" class="tab-content">
                                     <h3 class="pr-subtitle"> Project Info</h3>
-                                    <p>Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac
-                                        nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus
-                                        felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta.
-                                        Integer iaculis tellus nulla, quis imperdiet magna venenatis vitae.
-                                        Ut nec hinc dolor possim. An eros argumentum vel, elit diceret duo
-                                        eu, quo et aliquid ornatus delicatissimi. Cu nam tale ferri utroque,
-                                        eu habemus albucius mel, cu vidit possit ornatus eum. Eu ius
-                                        postulant salutatus definitionem, explicari. Graeci viderer qui ut,
-                                        at habeo facer solet usu. Pri choro pertinax indoctum ne, ad
-                                        partiendo persecuti forensibus est.
+                                    <p>{{$projects->title}}
                                     </p>
-                                    <h3 class="pr-subtitle mar-top"> The Brief</h3>
+                                    <h3 class="pr-subtitle mar-top"> Project Brief</h3>
                                     <!-- accordion-->
                                     <div class="accordion mar-top">
                                         <a class="toggle act-accordion" href="#"> Details option
@@ -154,28 +154,7 @@
                                         </div>
                                     </div>
                                     <!-- accordion end -->
-                                    <p class="mar-top">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                        elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar.
-                                        Donec a consectetur nulla. Nulla posuere sapien vitae lectus
-                                        suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat.</p>
-                                </div>
-                                <!-- tab-content end-->
-                                <!-- tab-content-->
-                                <div id="tab-2" class="tab-content">
-                                    <h3 class="pr-subtitle"> Project Presentation.</h3>
-                                    <p> An eros argumentum vel, elit diceret duo eu, quo et aliquid ornatus
-                                        delicatissimi. Cu nam tale ferri utroque, eu habemus albucius mel,
-                                        cu vidit possit ornatus eum. Eu ius postulant salutatus
-                                        definitionem, explicari. Graeci viderer qui ut, at habeo facer solet
-                                        usu. Pri choro pertinax indoctum ne, ad partiendo persecuti
-                                        forensibus est.</p>
-                                    <div class="video-box fl-wrap">
-                                        <img src="images/all/7.jpg" class="respimg" alt="">
-                                        <a class="video-box-btn image-popup"
-                                           href="https://vimeo.com/34741214"><i
-                                                class="fas fa-play"></i></a>
                                     </div>
-                                </div>
                                 <!-- tab-content end-->
                                 <!-- tab-content-->
                                 <div id="tab-3" class="tab-content">
@@ -183,24 +162,16 @@
                                     <div class="palns-gal fl-wrap lightgallery">
                                         <!-- plans-gal_item-->
                                         <div class="plans-gal_item hov_zoom">
-                                            <img src="images/plans/1.jpg" alt="" class="respimg">
-                                            <a href="images/plans/1.jpg"
+                                            <img src="{{asset('frontend/images/plans/1.jpg')}}" alt="" class="respimg">
+                                            <a href="{{asset('frontend/images/plans/1.jpg')}}"
                                                class="box-media-zoom   popup-image"><i
                                                     class="fal fa-search"></i></a>
                                         </div>
                                         <!-- plans-gal_item end-->
                                         <!-- plans-gal_item-->
                                         <div class="plans-gal_item hov_zoom">
-                                            <img src="images/plans/2.jpg" alt="" class="respimg">
-                                            <a href="images/plans/2.jpg"
-                                               class="box-media-zoom   popup-image"><i
-                                                    class="fal fa-search"></i></a>
-                                        </div>
-                                        <!-- plans-gal_item end-->
-                                        <!-- plans-gal_item-->
-                                        <div class="plans-gal_item hov_zoom">
-                                            <img src="images/plans/3.jpg" alt="" class="respimg">
-                                            <a href="images/plans/3.jpg"
+                                            <img src="{{asset('frontend/images/plans/3.jpg')}}" alt="" class="respimg">
+                                            <a href="{{asset('frontend/images/plans/3.jpg')}}"
                                                class="box-media-zoom   popup-image"><i
                                                     class="fal fa-search"></i></a>
                                         </div>
@@ -211,11 +182,6 @@
                             </div>
                             <!-- tabs-container end-->
                             <div class="clearfix"></div>
-                            <span class="dec-border fl-wrap"></span>
-                            <a href="#" class="pr-view" target="_blank">
-                                View project <i class="fal fa-long-arrow-right"></i>
-
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -230,22 +196,22 @@
                     <div class="content-nav">
                         <ul>
                             <li>
-                                <a href="portfolio-single.html" class="ln ajax"><i
+                                <a href="#" class="ln ajax"><i
                                         class="fal fa-long-arrow-left"></i><span>Prev - Project
-                                                    Title</span></a>
+                                                    </span></a>
                                 <div class="content-nav_mediatooltip cnmd_leftside"><img
-                                        src="images/folio/4.jpg" alt=""></div>
+                                        src="" alt=""></div>
                             </li>
                             <li>
-                                <a href="portfolio.html" class="ajax list-folio_nav">
+                                <a href="{{route('frontend.project')}}" class="ajax list-folio_nav">
                                     <span></span>
                                 </a>
                             </li>
                             <li>
-                                <a href="portfolio-single2.html" class="rn ajax"><span>Next - Project
-                                                    Title</span> <i class="fal fa-long-arrow-right"></i></a>
+                                <a href="#" class="rn ajax"><span>Next - Project
+                                                    </span> <i class="fal fa-long-arrow-right"></i></a>
                                 <div class="content-nav_mediatooltip cnmd_rightside"><img
-                                        src="images/folio/5.jpg" alt=""></div>
+                                        src="" alt=""></div>
                             </li>
                         </ul>
                     </div>

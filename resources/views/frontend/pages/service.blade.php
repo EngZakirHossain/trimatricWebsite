@@ -15,7 +15,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg" data-bg="images/bg/14.jpg"></div>
+                <div class="bg" data-bg="{{asset('frontend/images/bg/21.jpg')}}"></div>
                 <div class="overlay"></div>
                 <div class="progress-bar-wrap bot-element">
                     <div class="progress-bar"></div>
@@ -54,7 +54,7 @@
                         <div class="column-wrap-content fl-wrap">
                             <div class="column-wrap-media fl-wrap">
                                 <div class="pr-bg pr-bg-white"></div>
-                                <img src="images/Architecture.jpg" class="respimg" alt="">
+                                <img src="{{asset('frontend/images/Architecture.jpg')}}" class="respimg" alt="">
                                 <div class="cont-det-wrap dark-bg">
                                     <div class="pr-bg pr-bg-white"></div>
                                     <ul>
@@ -106,11 +106,11 @@
                         <div class="column-wrap-content fl-wrap">
                             <div class="column-wrap-media fl-wrap">
                                 <div class="pr-bg pr-bg-white"></div>
-                                <img src="images/interior.jpg" class="respimg" alt="">
+                                <img src="{{asset('frontend/images/interior.jpg')}}" class="respimg" alt="">
                                 <div class="cont-det-wrap dark-bg">
                                     <div class="pr-bg pr-bg-white"></div>
                                     <ul>
-                                        <li><span>Project Name :</span><a href="#">EPIC Garments</a></li>
+                                        <li><span>Project Name :</span><a href="#">Rupayan Swapno Niloy</a></li>
                                         <li><span>ARCHITECT Name :</span><a href="#">Syed Mirshad</a></li>
                                         <li><span>SIZE :</span><a href="#">10000 Square Feet</a></li>
                                         <li><span>TIME :</span><a href="#">60 Days</a></li>
@@ -152,18 +152,18 @@
                     <div class="container">
                         <div class="split-sceen-content_title fl-wrap">
                             <div class="pr-bg pr-bg-white"></div>
-                            <h3>Exterior Design & Renovation</h3>
+                            <h3>Exterior Design </h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar
                                 neque. Nulla finibus lobortis pulvinar. </p>
                         </div>
                         <div class="column-wrap-content fl-wrap">
                             <div class="column-wrap-media fl-wrap">
                                 <div class="pr-bg pr-bg-white"></div>
-                                <img src="images/Exterior.jpg" class="respimg" alt="">
+                                <img src="{{asset('frontend/images/Exterior.jpg')}}" class="respimg" alt="">
                                 <div class="cont-det-wrap dark-bg">
                                     <div class="pr-bg pr-bg-white"></div>
                                     <ul>
-                                        <li><span>Project Name :</span><a href="#">EPIC Garments</a></li>
+                                        <li><span>Project Name :</span><a href="#">Chattogram Software Technology Park </a></li>
                                         <li><span>ARCHITECT Name :</span><a href="#">Syed Mirshad</a></li>
                                         <li><span>SIZE :</span><a href="#">10000 Square Feet</a></li>
                                         <li><span>TIME :</span><a href="#">60 Days</a></li>
@@ -211,7 +211,7 @@
                         <div class="column-wrap-content fl-wrap">
                             <div class="column-wrap-media fl-wrap">
                                 <div class="pr-bg pr-bg-white"></div>
-                                <img src="images/design-consultancy.jpg" class="respimg" alt="">
+                                <img src="{{asset('frontend/images/design-consultancy.jpg')}}" class="respimg" alt="">
                                 <div class="cont-det-wrap dark-bg">
                                     <div class="pr-bg pr-bg-white"></div>
                                     <ul>
@@ -263,11 +263,11 @@
                         <div class="column-wrap-content fl-wrap">
                             <div class="column-wrap-media fl-wrap">
                                 <div class="pr-bg pr-bg-white"></div>
-                                <img src="images/Furniture.png" class="respimg" alt="">
+                                <img src="{{asset('frontend/images/Furniture.jpg')}}" class="respimg" alt="">
                                 <div class="cont-det-wrap dark-bg">
                                     <div class="pr-bg pr-bg-white"></div>
                                     <ul>
-                                        <li><span>Project Name :</span><a href="#">EPIC Garments</a></li>
+                                        <li><span>Project Name :</span><a href="#">Rupayan Swapno Niloy </a></li>
                                         <li><span>ARCHITECT Name :</span><a href="#">Syed Mirshad</a></li>
                                         <li><span>SIZE :</span><a href="#">10000 Square Feet</a></li>
                                         <li><span>TIME :</span><a href="#">60 Days</a></li>
@@ -308,58 +308,6 @@
                     <div class="container">
                         <div class="split-sceen-content_title fl-wrap">
                             <div class="pr-bg pr-bg-white"></div>
-                            <h3>Turnkey Based Execution</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar
-                                neque. Nulla finibus lobortis pulvinar. </p>
-                        </div>
-                        <div class="column-wrap-content fl-wrap">
-                            <div class="column-wrap-media fl-wrap">
-                                <div class="pr-bg pr-bg-white"></div>
-                                <img src="images/all/4.jpg" class="respimg" alt="">
-                                <div class="cont-det-wrap dark-bg">
-                                    <div class="pr-bg pr-bg-white"></div>
-                                    <ul>
-                                        <li><span>Project Name :</span><a href="#">EPIC Garments</a></li>
-                                        <li><span>ARCHITECT Name :</span><a href="#">Syed Mirshad</a></li>
-                                        <li><span>SIZE :</span><a href="#">10000 Square Feet</a></li>
-                                        <li><span>TIME :</span><a href="#">60 Days</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="serv-text fl-wrap">
-                                <div class="pr-bg pr-bg-white"></div>
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                                            ornare sem sed quam tempus aliquet vitae eget dolor. Proin eu
-                                            ultrices libero. Curabitur vulputate vestibulum elementum.
-                                            Suspendisse id neque a nibh mollis blandit. Quisque varius eros
-                                            ac purus dignissim.
-                                            Proin eu ultrices libero. Curabitur vulputate vestibulum
-                                            elementum. Suspendisse id neque a nibh mollis blandit. Quisque
-                                            varius eros ac purus dignissim.
-                                        </p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="serv-price-wrap dark-bg"><span>Status</span>Ongoing
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="section-number right_sn">
-                            <div class="pr-bg pr-bg-white"></div>
-                            <span>0</span>6.
-                        </div>
-                    </div>
-                </section>
-                <!--section end-->
-
-                <!--section-->
-                <section class="small-padding">
-                    <div class="container">
-                        <div class="split-sceen-content_title fl-wrap">
-                            <div class="pr-bg pr-bg-white"></div>
                             <h3>Landscaping</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar
                                 neque. Nulla finibus lobortis pulvinar. </p>
@@ -367,11 +315,11 @@
                         <div class="column-wrap-content fl-wrap">
                             <div class="column-wrap-media fl-wrap">
                                 <div class="pr-bg pr-bg-white"></div>
-                                <img src="images/all/4.jpg" class="respimg" alt="">
+                                <img src="{{asset('frontend/images/Landscaping.jpg')}}" class="respimg" alt="">
                                 <div class="cont-det-wrap dark-bg">
                                     <div class="pr-bg pr-bg-white"></div>
                                     <ul>
-                                        <li><span>Project Name :</span><a href="#">EPIC Garments</a></li>
+                                        <li><span>Project Name :</span><a href="#">Silver Jubliee Bhaban, Rangpur </a></li>
                                         <li><span>ARCHITECT Name :</span><a href="#">Syed Mirshad</a></li>
                                         <li><span>SIZE :</span><a href="#">10000 Square Feet</a></li>
                                         <li><span>TIME :</span><a href="#">60 Days</a></li>
@@ -413,7 +361,7 @@
                     <div class="order-wrap dark-bg fl-wrap">
                         <div class="pr-bg pr-bg-white"></div>
                         <h4>Ready to order Your Project ? </h4>
-                        <a href="contacts.html" class="ajax">Get In Touch <i
+                        <a href="{{route('frontend.contact')}}" class="ajax">Get In Touch <i
                                 class="fal fa-envelope"></i></a>
                     </div>
                 </div>

@@ -140,7 +140,7 @@ input:-webkit-autofill:focus {
 	color: #1e2022;
 }
 .form-control:focus {
-	box-shadow: 0 0 10px rgba(136, 136, 136, 0.125); 
+	box-shadow: 0 0 10px rgba(136, 136, 136, 0.125);
 	outline: 0 none;
 	border-color: #c1c9d0;;
 }
@@ -169,7 +169,7 @@ p {
     margin-top: 0;
     margin-bottom: 1rem;
 }
-p:last-child { 
+p:last-child {
     margin-bottom: 0;
 }
 dl, ol, ul {
@@ -209,7 +209,7 @@ textarea.form-control {
 }
 .form-group {
 	margin-bottom: 1.25rem;
-} 
+}
 .form-group img {
 	width:100%;
 }
@@ -264,7 +264,7 @@ p:last-child{
 .table.no-border > tfoot > tr > td,
 .table.no-border > tfoot > tr > th,
 .table.no-border > thead > tr > td,
-.table.no-border > thead > tr > th { 
+.table.no-border > thead > tr > th {
 	padding: 10px 8px;
 }
 .table-nowrap td,
@@ -303,7 +303,7 @@ table.table td h2 span {
 	display: block;
 	font-size: 12px;
 	margin-top: 3px;
-} 
+}
 .table thead {
     background-color: transparent;
     border-bottom: 0;
@@ -1434,8 +1434,8 @@ button.bg-danger:hover {
 	border-width: 2px;
 }
 .avatar-lg {
-	width: 3.75rem;
-	height: 3.75rem;
+	width: 10.75rem;
+	height: 6.75rem;
 }
 .avatar-lg .border {
 	border-width: 3px !important;
@@ -1794,7 +1794,7 @@ html.menu-opened body {
     display: flex;
     justify-content: space-between;
 }
-.chat-window .chat-cont-left .chat-users-list a.media .media-body > div:first-child .user-name, 
+.chat-window .chat-cont-left .chat-users-list a.media .media-body > div:first-child .user-name,
 .chat-window .chat-cont-left .chat-users-list a.media .media-body > div:first-child .user-last-chat {
     max-width: 250px;
     overflow: hidden;
@@ -1988,7 +1988,7 @@ html.menu-opened body {
     border: none;
     box-shadow: none;
 }
-.chat-window .chat-cont-right .chat-footer .input-group .input-group-prepend .btn, 
+.chat-window .chat-cont-right .chat-footer .input-group .input-group-prepend .btn,
 .chat-window .chat-cont-right .chat-footer .input-group .input-group-append .btn {
     background-color: transparent;
     border: none;
@@ -2291,7 +2291,7 @@ html.menu-opened body {
 -----------------------*/
 
 .sidebar {
-	background-color: #fff; 
+	background-color: #fff;
 	bottom: 0;
 	left: 0;
 	margin-top: 0;
@@ -2313,7 +2313,7 @@ html.menu-opened body {
 	height: 100%;
 	min-height: 100%;
 	transition: all 0.2s ease-in-out 0s;
-} 
+}
 .sidebar-menu ul {
 	font-size: 15px;
 	list-style-type: none;
@@ -2333,7 +2333,7 @@ html.menu-opened body {
 }
 .sidebar-menu > ul > li > a:hover {
 	background-color: rgba(118, 56, 255, 0.05);
-    color: #7638ff; 
+    color: #7638ff;
 }
 .sidebar-menu li.active > a {
 	background-color: rgba(118, 56, 255, 0.05);
@@ -2459,7 +2459,7 @@ html.menu-opened body {
 	top: 10px;
 }
 .sidebar-menu > ul > li > a {
-	align-items: center; 
+	align-items: center;
 	display: flex;
 	justify-content: flex-start;
 	padding: 8px 15px;
@@ -2550,7 +2550,7 @@ html.menu-opened body {
 .fc-unthemed .fc-popover {
 	border-color: #f3f3f3;
 }
-.fc-basic-view .fc-day-number, 
+.fc-basic-view .fc-day-number,
 .fc-basic-view .fc-week-number {
     padding: 2px 5px;
 }
@@ -2880,7 +2880,7 @@ table.table-inbox tbody tr.checked {
 }
 .page-wrapper > .content {
 	padding: 1.875rem 1.875rem 0;
-} 
+}
 .page-header {
     margin-bottom: 1.875rem;
 }
@@ -3033,7 +3033,7 @@ table.table-inbox tbody tr.checked {
 	text-transform: uppercase;
 	top: 0;
 	width: 42px;
-} 
+}
 .lock-user {
     margin-bottom: 20px;
     text-align: center;
@@ -3258,9 +3258,9 @@ table.table-inbox tbody tr.checked {
 .activity-feed .feed-item .feed-text a {
 	color: #333;
 	font-weight: 600;
-} 
-.modal-icon i {   
-    font-size: 42px;   
+}
+.modal-icon i {
+    font-size: 42px;
     color: #6c757d;
 }
 .modal-footer {
@@ -3361,7 +3361,7 @@ table.table-inbox tbody tr.checked {
 	position: relative;
 	display: -inline-flexbox;
 	display: inline-flex;
-	vertical-align: middle; 
+	vertical-align: middle;
 }
 
 
@@ -3477,7 +3477,7 @@ table.table-inbox tbody tr.checked {
 	-webkit-transform: translate3d(.81094rem, 50%, 0);
 	transform: translate3d(.81094rem, 50%, 0)
 }
- 
+
 /*-----------------
 	24. Profile
 -----------------------*/
@@ -3709,7 +3709,7 @@ table.table-inbox tbody tr.checked {
 	.mini-sidebar.expand-menu .sidebar .sidebar-menu ul > li > a span {
 		display: inline;
 		opacity: 1;
-	} 
+	}
 	.mini-sidebar .page-wrapper {
 		margin-left: 78px;
 	}

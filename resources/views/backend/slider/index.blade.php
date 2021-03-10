@@ -61,7 +61,6 @@
                                                             <span class="text-danger">{{ $message }}</span>
                                                             @enderror
                                                         </div>
-
                                                 </div>
                                             </div>
                                         </div>
@@ -107,34 +106,61 @@
                                         <th>Photo</th>
                                         <th>Title</th>
                                         <th>Description</th>
+                                        <th>Created at</th>
                                         <th class="text-right">Actions</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @forelse ($slider_infos as $slider_info)
-
                                         <tr>
                                             <input class="sliderDelete_val_id" type="hidden" name="id" value="{{ $slider_info->id }}">
                                             <td>
                                                 <h2 class="table-avatar">
-                                                    <a href="#"><img class="avatar avatar-lg ml-2 avatar-img rounded-circle" src=" {{ asset('backend/uploads/slider_photos') }}/{{ $slider_info->photo }}" alt="slider Image"></a>
+                                                    <a href="#"><img class="avatar avatar-lg ml-2 avatar-img rounded-circle" src=" {{ asset('/storage/uploads/slider') }}/{{ $slider_info->photo }}" alt="slider Image"></a>
                                                 </h2>
                                             </td>
                                             <td>{{ $slider_info->title }}</td>
                                             <td>{!! \Illuminate\Support\Str::limit($slider_info->description, 20)  !!}</td>
-
-                                            <td class="text-right">
-                                                        <a href="#" class="btn btn-sm btn-white text-danger sweet_delete mr-2"><i class="far fa-trash-alt mr-1"></i>Delete</a>
-
+                                            <td>{{ $slider_info->created_at->diffForHumans() }}</td>
+                                            <td>
+                                                <a href="{{route('slider.edit',[$slider_info->id])}}" type="button" class="btn btn-secondary">
+                                                    <span data-feather="edit"></span>
+                                                </a>
+                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$slider_info->id}}">
+                                                    <span data-feather="trash-2"></span>
+                                                </button>
                                             </td>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="exampleModal{{$slider_info->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <form action="{{route('slider.delete',[$slider_info->id])}}" method="POST">
+                                                            @csrf
+                                                            {{method_field('DELETE')}}
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Delete!</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <h6>Do you Want to delete this Slider?</h6>
+                                                                <p>Slider won't be available!!</p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </tr>
-
                                     @empty
-                                        <tr>
-                                            <td colspan="60">No Slider Found</td>
-                                        </tr>
+                                    <tr>
+                                        <td colspan="60">No Slider Found</td>
+                                    </tr>
                                     @endforelse
-
                                     </tbody>
                                 </table>
                             </div>
@@ -148,56 +174,5 @@
 
 @endsection
 @section('scripts')
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-            $('.sweet_delete').click(function(){
-
-
-                var delete_id = $(this).closest("tr").find('.sliderDelete_val_id').val();
-                // alert(delete_id);
-
-                Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        var data = {
-                            "_token": $('input[name=_token]').val(),
-                            "id": delete_id,
-                        };
-                        $.ajax({
-                            type:"POST",
-                            url:"{{ route('slider.delete') }}",
-                            data: data,
-                            success: function (response){
-                                Swal.fire(
-                                    'Deleted!',
-                                    'Slider deleted.',
-                                    'success'
-                                )
-                                    .then((result) =>{
-                                        location.reload();
-                                    });
-                            }
-                        });
-
-
-
-                    }
-                })
-            });
-        } );
-    </script>
 
 @endsection

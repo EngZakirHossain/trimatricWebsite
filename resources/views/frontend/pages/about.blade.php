@@ -15,7 +15,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg" data-bg="{{asset('frontend/images//all/3.jpg')}}"></div>
+                <div class="bg" data-bg="{{asset('frontend/images/bg/21.jpg')}}"></div>
                 <div class="overlay"></div>
                 <div class="progress-bar-wrap bot-element">
                     <div class="progress-bar"></div>
@@ -57,7 +57,7 @@
                         <div class="column-wrap-content fl-wrap">
                             <div class="column-wrap-media fl-wrap">
                                 <div class="pr-bg pr-bg-white"></div>
-                                <img src="{{asset('frontend/images//all/8.jpg')}}" class="respimg" alt="">
+                                <img src="{{asset('frontend/images/bg/8.jpg')}}" class="respimg" alt="">
                                 <a href="https://vimeo.com/56930191"
                                    class="column-wrap-media_btn color-bg image-popup">
                                     Our Story Video <i class="fas fa-play"></i>
@@ -202,106 +202,42 @@
                             <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar
                                 neque. Nulla finibus lobortis pulvinar. </p> -->
                         </div>
-                        <!-- team-box   -->
-                        <div class="team-box">
-                            <div class="pr-bg pr-bg-white"></div>
-                            <div class="team-photo">
-                                <div class="overlay"></div>
-                                <img src="https://via.placeholder.com/800x530" alt="" class="respimg">
-                                <ul class="team-social">
-                                    <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                    </li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                                    </li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
-                                </ul>
-                                <a href="#" class="team-contact_btn color-bg"><i
-                                        class="fal fa-envelope"></i></a>
-                            </div>
-                            <div class="team-info">
-                                <h3>Syed Mirshad</h3>
-                                <h4>CEO / Architect</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. </p>
-                            </div>
-                        </div>
-                        <!-- team-box end -->
-                        <!-- team-box   -->
-                        <div class="team-box">
-                            <div class="pr-bg pr-bg-white"></div>
-                            <div class="team-photo">
-                                <div class="overlay"></div>
-                                <img src="https://via.placeholder.com/800x530" alt="" class="respimg">
-                                <ul class="team-social">
-                                    <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                    </li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                                    </li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
-                                </ul>
-                                <a href="#" class="team-contact_btn color-bg"><i
-                                        class="fal fa-envelope"></i></a>
-                            </div>
-                            <div class="team-info">
-                                <h3>Syed Mirshad</h3>
-                                <h4>Architect / Designer</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. </p>
+                        @php
+                            $teams = \App\Team::limit(4)->get();
+                        @endphp
+                        <div class="row">
+                            <div class="col-md-12">
+                                @foreach($teams as $key=>$row)
+                                <!-- team-box   -->
+                                <div class="team-box">
+                                    <div class="pr-bg pr-bg-white"></div>
+                                    <div class="team-photo">
+                                        <div class="overlay"></div>
+                                        <img src="{{asset('/storage/uploads/teams')}}/{{$row->photo}}" alt="" class="respimg">
+                                        <a href="{{$row->email}}" class="team-contact_btn color-bg">
+                                            <i class="fal fa-envelope"></i>
+                                        </a>
+                                    </div>
+                                    <div class="team-info">
+                                        <h3><a href="{{route('frontend.team-member',($row->name))}}">{{$row->name}}</a></h3>
+                                        <h4>{{$row->designation}}</h4>
+                                        <h4>{{$row->department}}</h4>
+                                        <p>{!! \Illuminate\Support\Str::limit($row->description, 100)  !!}</p>
+                                    </div>
+                                </div>
+                                <!-- team-box end -->
+                                @endforeach
                             </div>
                         </div>
-                        <!-- team-box end -->
-                        <!-- team-box   -->
-                        <div class="team-box">
+                        <a href="" class="pr-view ajax">View Our Awesome Team Member<i class="fal fa-long-arrow-right"></i></a>
+                        <div class="pr-bg pr-bg-white"></div>
+
+                        <a href="{{route('frontend.team')}}"
+                           class="column-wrap-media_btn color-bg pt-5 mt-5">
+                            Our Team Member<i class="fal fa-long-arrow-right"></i>
                             <div class="pr-bg pr-bg-white"></div>
-                            <div class="team-photo">
-                                <div class="overlay"></div>
-                                <img src="https://via.placeholder.com/800x530" alt="" class="respimg">
-                                <ul class="team-social">
-                                    <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                    </li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                                    </li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
-                                </ul>
-                                <a href="#" class="team-contact_btn color-bg"><i
-                                        class="fal fa-envelope"></i></a>
-                            </div>
-                            <div class="team-info">
-                                <h3>Syed Mirshad</h3>
-                                <h4>Architect / Designer</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. </p>
-                            </div>
-                        </div>
-                        <!-- team-box end -->
-                        <!-- team-box   -->
-                        <div class="team-box">
-                            <div class="pr-bg pr-bg-white"></div>
-                            <div class="team-photo">
-                                <div class="overlay"></div>
-                                <img src="https://via.placeholder.com/800x530" alt="" class="respimg">
-                                <ul class="team-social">
-                                    <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                    </li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                                    </li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
-                                </ul>
-                                <a href="#" class="team-contact_btn color-bg"><i
-                                        class="fal fa-envelope"></i></a>
-                            </div>
-                            <div class="team-info">
-                                <h3>Syed Mirshad</h3>
-                                <h4>Photographer / Designer</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. </p>
-                            </div>
-                        </div>
-                        <!-- team-box end -->
+                        </a>
+
                         <div class="section-number right_sn">
                             <div class="pr-bg pr-bg-white"></div>
                             <span>0</span>2.
@@ -325,74 +261,22 @@
                                     <div class="pr-bg pr-bg-white"></div>
                                     <div class="swiper-container">
                                         <div class="swiper-wrapper">
+                                            @php
+                                                $testimonials = \App\Testimonial::orderBy('id','desc')->get();
+                                            @endphp
+                                            @foreach($testimonials as $key=>$row)
                                             <!-- swiper-slide -->
                                             <div class="swiper-slide">
                                                 <div class="testi-item fl-wrap">
                                                     <div class="testi-avatar"><img
-                                                            src="https://via.placeholder.com/150" alt="">
+                                                            src="{{asset('storage/uploads/testimonial')}}/{{$row->photo}}" alt="">
                                                     </div>
-                                                    <h3>Liza Mirovsky</h3>
-                                                    <p>"There are many variations of passages of Lorem Ipsum
-                                                        available, but the majority have suffered alteration
-                                                        in some form, by injected humour, or randomised
-                                                        words which don't look even slightly believable."
-                                                    </p>
-                                                    <!-- <a href="#" class="teti-link" target="_blank">Via
-                                                        Twitter</a> -->
+                                                    <h3>{{$row->name}}</h3>
+                                                    <p>"{{$row->description}}"</p>
                                                 </div>
                                             </div>
                                             <!-- swiper-slide end-->
-                                            <!-- swiper-slide -->
-                                            <div class="swiper-slide">
-                                                <div class="testi-item fl-wrap">
-                                                    <div class="testi-avatar"><img
-                                                            src="https://via.placeholder.com/150" alt="">
-                                                    </div>
-                                                    <h3>Andy Smith</h3>
-                                                    <p>"There are many variations of passages of Lorem Ipsum
-                                                        available, but the majority have suffered alteration
-                                                        in some form, by injected humour, or randomised
-                                                        words which don't look even slightly believable."
-                                                    </p>
-                                                    <!-- <a href="#" class="teti-link" target="_blank">Via
-                                                        Facebook</a> -->
-                                                </div>
-                                            </div>
-                                            <!-- swiper-slide end-->
-                                            <!-- swiper-slide -->
-                                            <div class="swiper-slide">
-                                                <div class="testi-item fl-wrap">
-                                                    <div class="testi-avatar"><img
-                                                            src="https://via.placeholder.com/150" alt="">
-                                                    </div>
-                                                    <h3>Gary Trust</h3>
-                                                    <p>"There are many variations of passages of Lorem Ipsum
-                                                        available, but the majority have suffered alteration
-                                                        in some form, by injected humour, or randomised
-                                                        words which don't look even slightly believable."
-                                                    </p>
-                                                    <!-- <a href="#" class="teti-link" target="_blank">Via
-                                                        Myspace</a> -->
-                                                </div>
-                                            </div>
-                                            <!-- swiper-slide end-->
-                                            <!-- swiper-slide -->
-                                            <div class="swiper-slide">
-                                                <div class="testi-item fl-wrap">
-                                                    <div class="testi-avatar"><img
-                                                            src="https://via.placeholder.com/150" alt="">
-                                                    </div>
-                                                    <h3>Centa Simpson</h3>
-                                                    <p>"There are many variations of passages of Lorem Ipsum
-                                                        available, but the majority have suffered alteration
-                                                        in some form, by injected humour, or randomised
-                                                        words which don't look even slightly believable."
-                                                    </p>
-                                                    <!-- <a href="#" class="teti-link" target="_blank">Via
-                                                        Facebook</a> -->
-                                                </div>
-                                            </div>
-                                            <!-- swiper-slide end-->
+                                            @endforeach
                                         </div>
                                         <div class="testilider-controls">
                                             <div class="tc-pagination"></div>
@@ -426,17 +310,15 @@
                                 <div class="testilider fl-wrap" data-effects="slide">
                                     <div class="pr-bg pr-bg-white"></div>
                                     <div class="swiper-container">
-                                        <div class="swiper-wrapper">
+                                        <div class="swiper-wrapper ">
                                             <!-- swiper-slide -->
-                                            <div class="swiper-slide">
-                                                     <img style="height: 100px; width: 100px" src="{{asset('frontend/images/clients/1.png')}}" alt="">
-                                            </div>
-                                            <div class="swiper-slide">
-                                                    <img style="height: 100px; width: 100px"  src="{{asset('frontend/images/clients/2.png')}}" alt="">
-                                            </div>
-                                            <div class="swiper-slide">
-                                                    <img style="height: 100px; width: 100px"  src="{{asset('frontend/images/clients/3.png')}}" alt="">
-                                            </div>
+                                            @foreach($clients as $key=>$row)
+                                                <div class="swiper-slide">
+                                                    <div class="testi-item fl-wrap"  >
+                                                       <img src="{{asset('/uploads/clients')}}/{{$row->photo}}" style="height: 180px; width: 180px" alt="">
+                                                    </div>
+                                                </div>
+                                                @endforeach
                                             <!-- swiper-slide end-->
                                         </div>
                                         <div class="testilider-controls">
@@ -452,7 +334,7 @@
                         </div>
                         <div class="section-number right_sn">
                             <div class="pr-bg pr-bg-white"></div>
-                            <span>0</span>3.
+                            <span>0</span>4.
                         </div>
                     </div>
                 </section>

@@ -41,15 +41,49 @@
                                             <div class="row">
                                                 <div class="col-11 m-auto">
                                                         <div class="form-group">
+                                                            <label for="">Project Category<span class="text-danger">*</span></label>
+                                                            <select name="cat_name" id="" class="form-control">
+                                                                <option value="" selected> Select Project Category</option>
+                                                                <option value="CORPORATE">CORPORATE</option>
+                                                                <option value="EDUCATIONAL">EDUCATIONAL</option>
+                                                                <option value="HOSPITALITY">HOSPITALITY</option>
+                                                                <option value="RELIGIOUS">RELIGIOUS</option>
+                                                                <option value="EXTERIOR">EXTERIOR</option>
+                                                                <option value="INTERIOR">INTERIOR</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group">
                                                             <label for="">Project Name<span class="text-danger">*</span></label>
-                                                            <textarea class="form-control " type="text" name="title" rows="4">{{ old('title') }}</textarea>
+                                                            <input class="form-control " type="text" name="title" rows="4">{{ old('title') }}</input>
                                                             @error ('title')
                                                             <span class="text-danger">{{ $message }}</span>
                                                             @enderror
                                                         </div>
                                                         <div class="form-group">
+                                                            <label for="">Project Start<span class="text-danger">*</span></label>
+                                                            <input class="form-control " type="date" name="project_start" rows="4">{{ old('project_start') }}</input>
+                                                            @error ('project_start')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                            @enderror
+                                                        </div>
+                                                       <div class="form-group">
+                                                            <label for="">Project Location<span class="text-danger">*</span></label>
+                                                            <input class="form-control " type="text" name="project_address" rows="4">{{ old('project_address') }}</input>
+                                                            @error ('project_address')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                            @enderror
+                                                        </div>
+                                                    <div class="form-group">
+                                                        <label for="">Project Status<span class="text-danger">*</span></label>
+                                                        <select name="status" id="" class="form-control">
+                                                            <option value="" selected> Select Project Category</option>
+                                                            <option value="Running">Running</option>
+                                                            <option value="Complete">Complete</option>
+                                                        </select>
+                                                    </div>
+                                                        <div class="form-group">
                                                             <label for="">Description<span class="text-danger">*</span></label>
-                                                            <textarea class="form-control " type="text" name="description" rows="8">{{ old('description') }}</textarea>
+                                                            <textarea class="form-control " type="text" name="description" rows="6">{{ old('description') }}</textarea>
                                                             @error ('description')
                                                             <span class="text-danger">{{ $message }}</span>
                                                             @enderror
@@ -107,6 +141,7 @@
                                         <th>Photo</th>
                                         <th>Title</th>
                                         <th>Description</th>
+                                        <th>Category</th>
                                         <th class="text-right">Actions</th>
                                     </tr>
                                     </thead>
@@ -117,11 +152,12 @@
                                             <input class="Delete_val_id" type="hidden" name="id" value="{{ $row->id }}">
                                             <td>
                                                 <h2 class="table-avatar">
-                                                    <a href="#"><img class="avatar avatar-lg ml-2 avatar-img rounded-circle" src=" {{ asset('backend/uploads/projects') }}/{{ $row->photo }}" alt="slider Image"></a>
+                                                    <a href="#"><img class="avatar avatar-lg ml-2 avatar-img" src=" {{ asset('uploads/projects') }}/{{ $row->photo }}" alt="slider Image"></a>
                                                 </h2>
                                             </td>
                                             <td>{{ $row->title }}</td>
                                             <td>{!! \Illuminate\Support\Str::limit($row->description, 20)  !!}</td>
+                                            <td>{{$row->cat_name}}</td>
 
                                             <td class="text-right">
                                                         <a href="#" class="btn btn-sm btn-white text-danger sweet_delete mr-2"><i class="far fa-trash-alt mr-1"></i>Delete</a>
@@ -178,7 +214,7 @@
                         };
                         $.ajax({
                             type:"POST",
-                            url:"{{ route('project.delete') }}",
+                            url:"{{route('project.delete')}}",
                             data: data,
                             success: function (response){
                                 Swal.fire(
