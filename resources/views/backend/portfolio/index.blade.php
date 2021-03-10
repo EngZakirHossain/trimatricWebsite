@@ -107,7 +107,7 @@
                                             <input class="Delete_val_id" type="hidden" name="id" value="{{ $row->id }}">
                                             <td>
                                                 <h2 class="table-avatar">
-                                                    <a href="#"><img class="avatar avatar-lg ml-2 avatar-img" src=" {{ asset('uploads/projects') }}/{{ $row->photo }}" alt="slider Image"></a>
+                                                    <a href="#"><img class="avatar avatar-lg ml-2 avatar-img" src=" {{asset('storage/uploads/portfolio')}}/{{$row->photo}}" alt="slider Image"></a>
                                                 </h2>
                                             </td>
                                             @php

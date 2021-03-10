@@ -51,7 +51,7 @@ class CvController extends Controller
         if ($request->hasFile('file')) {
             $file = $request->file('file');
             $name = $request->name. "." .$request->email. "." .date('Y-m-d'). "." .time(). "." .'cv'. "." .$file->getClientOriginalExtension();
-            $destination = ('/storage/uploads/cv');
+            $destination = public_path('storage/uploads/cv');
             $file->move($destination, $name);
             $file_path = $name;
         }else{

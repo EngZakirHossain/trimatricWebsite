@@ -19,7 +19,7 @@ class SliderController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'photo' => 'required',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,bmp,gif,svg|max:2048',
         ]);
 
         $current_id = Slider::insertGetId([
@@ -33,7 +33,7 @@ class SliderController extends Controller
             //upload profile photo start
             $image = $request->file('photo');
             $name = ($request->title). "." . date('Y-m-d') . "." . time() . "." . 'slider' . "." . $image->getClientOriginalExtension();
-            $destination = ('/storage/uploads/slider');
+            $destination = public_path('storage/uploads/slider');
             $image->move($destination,$name);
             Slider::findOrFail($current_id)->update([
                 'photo' => $name,
@@ -59,7 +59,7 @@ class SliderController extends Controller
     {
 //        dd($id);
         $image = Slider::findOrFail($id);
-        $image_path = ("/storage/uploads/slider/{$image->photo}");
+        $image_path = public_path("storage/uploads/slider/{$image->photo}");
 
         if (File::exists($image_path)) {
             unlink($image_path);

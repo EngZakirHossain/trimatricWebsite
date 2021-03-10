@@ -48,7 +48,7 @@ class TestimonialController extends Controller
         if ($request->hasFile('photo')) {
             $image = $request->file('photo');
             $name = ($request->name). "." . date('Y-m-d') . "." . time() . "." . 'testimonial' . "." . $image->getClientOriginalExtension();
-            $destination = ('storage/uploads/testimonial');
+            $destination = public_path('storage/uploads/testimonial');
             $image->move($destination, $name);
             $image_url = $name;
         }else{

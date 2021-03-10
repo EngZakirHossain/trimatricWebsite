@@ -56,10 +56,45 @@
                                             <td>{{ $row->name }}</td>
                                             <td>{{ $row->phone }}</td>
                                             <td>{{ $row->email }}</td>
-                                            <td>{{$row->message}}</td>
+                                            <td>{!! \Illuminate\Support\Str::limit($row->message, 20)  !!}</td>
+
                                             <td class="text-right">
-                                                        <a href="#" class="btn btn-sm btn-white text-danger sweet_delete mr-2"><i class="far fa-trash-alt mr-1"></i>Delete</a>
+                                                <a href="#" class="btn btn-sm btn-white text-secondary mr-2" data-toggle="modal" data-target="#exampleModal{{$row->id}}">
+                                                    <i class="far fa-eye mr-1"></i>
+                                                    View
+                                                </a>
+                                                <a href="#" class="btn btn-sm btn-white text-danger sweet_delete mr-2">
+                                                    <i class="far fa-trash-alt mr-1"></i>
+                                                    Delete
+                                                </a>
                                             </td>
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="exampleModal{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">CV</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            @php
+                                                                $contact = \App\Contact::where('id', $row->id)->first();
+                                                            @endphp
+                                                            Name: <p class="text-muted">{{$contact->name}}</p>
+                                                            Phone: <p class="text-muted">{{$contact->phone}}</p>
+                                                            Email: <p class="text-muted">{{$contact->email}}</p>
+                                                            Message: <p class="text-muted">{{$contact->message}}</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Modal END -->
                                         </tr>
 
                                     @empty
