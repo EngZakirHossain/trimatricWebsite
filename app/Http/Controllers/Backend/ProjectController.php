@@ -18,7 +18,7 @@ class ProjectController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'photo' => 'required',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,bmp,gif,svg|max:2048',
             'cat_name' => 'required',
             'project_start' => 'required',
             'project_address' => 'required',
@@ -40,7 +40,7 @@ class ProjectController extends Controller
             //upload profile photo start
             $image = $request->file('photo');
             $name = 'project'."$current_id".".".$image->getClientOriginalExtension();
-            $destination = ('uploads/projects');
+            $destination = public_path('storage/uploads/projects');
             $image->move($destination,$name);
             Project::findOrFail($current_id)->update([
                 'photo' => $name,
@@ -55,13 +55,13 @@ class ProjectController extends Controller
     public function destroy(Request $request)
     {
         $name = Project::findOrFail($request->id)->photo;
-        $old_photo_location = ('uploads/projects/').$name;
+        $old_photo_location = public_path('storage/uploads/projects').$name;
         unlink($old_photo_location);
 
         $slider_delete = Project::findOrFail($request->id);
         $slider_delete->delete();
 
-        return back()->with('message','Slider Delete Successfully');
+        return back()->with('message','Project Delete Successfully');
 
     }
 }

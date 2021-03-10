@@ -38,7 +38,7 @@
                 <!-- gallery-item-->
                     <div class="gallery-item interior design">
                         <div class="grid-item-holder">
-                            <img  src="{{asset('uploads/clients')}}/{{$row->photo}}" style="height: 200px; width: 200px;" alt="">
+                            <img  src="{{asset('storage/uploads/clients')}}/{{$row->photo}}" style="height: 200px; width: 200px;" alt="">
                             <div class="grid-det">
                                 <div class="grid-det-item">
                                     <a href="https://{{$row->link}}" class="ajax grid-det_link" target="_blank">{{$row->title}}</a>

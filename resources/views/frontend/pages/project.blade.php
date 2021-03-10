@@ -60,7 +60,7 @@
             @foreach($projects as $key=>$row)
             <div class="gallery-item interior {{$row->cat_name}}">
                 <div class="grid-item-holder">
-                    <img src="{{asset('uploads/projects')}}/{{$row->photo}}" alt="">
+                    <img src="{{asset('storage/uploads/projects')}}/{{$row->photo}}" alt="">
                     <div class="grid-det">
                         <div class="grid-det_category"><a href="#">Architecture</a> <a
                                 href="#">Design</a></div>

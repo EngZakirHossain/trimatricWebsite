@@ -39,8 +39,8 @@
                                 <div class="portfolio_item {{$row->cat_name}} ">
                                     <div class="grid-item-holder swiper-wrapper lightgallery">
                                         <div class="swiper-slide hov_zoom">
-                                            <img  src="{{asset('uploads/projects')}}/{{$row->photo}}" alt="">
-                                            <a href="{{asset('uploads/projects')}}/{{$row->photo}}" class="box-media-zoom popup-image"><i class="fal fa-search"></i></a>
+                                            <img  src="{{asset('storage/uploads/portfolio')}}/{{$row->photo}}" alt="">
+                                            <a href="{{asset('storage/uploads/portfolio')}}/{{$row->photo}}" class="box-media-zoom popup-image"><i class="fal fa-search"></i></a>
                                         </div>
                                     </div>
                                     <div class="pr-bg"></div>

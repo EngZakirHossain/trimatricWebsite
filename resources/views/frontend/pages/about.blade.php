@@ -315,7 +315,7 @@
                                             @foreach($clients as $key=>$row)
                                                 <div class="swiper-slide">
                                                     <div class="testi-item fl-wrap"  >
-                                                       <img src="{{asset('/uploads/clients')}}/{{$row->photo}}" style="height: 180px; width: 180px" alt="">
+                                                       <img src="{{asset('storage/uploads/clients')}}/{{$row->photo}}" style="height: 180px; width: 180px" alt="">
                                                     </div>
                                                 </div>
                                                 @endforeach

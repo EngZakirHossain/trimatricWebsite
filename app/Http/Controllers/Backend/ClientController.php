@@ -17,7 +17,7 @@ class ClientController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'photo' => 'required',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,bmp,gif,svg|max:2048',
         ]);
 
         $current_id = Client::insertGetId([
@@ -31,7 +31,7 @@ class ClientController extends Controller
             //upload profile photo start
             $image = $request->file('photo');
             $name = 'client'."$current_id".".".$image->getClientOriginalExtension();
-            $destination = ('uploads/clients');
+            $destination = public_path('storage/uploads/clients');
             $image->move($destination,$name);
             Client::findOrFail($current_id)->update([
                 'photo' => $name,
@@ -46,7 +46,7 @@ class ClientController extends Controller
     public function destroy(Request $request)
     {
         $name = Client::findOrFail($request->id)->photo;
-        $old_photo_location = ('uploads/clients').$name;
+        $old_photo_location = public_path('storage/uploads/clients').$name;
         unlink($old_photo_location);
 
         $slider_delete = Client::findOrFail($request->id);

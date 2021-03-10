@@ -52,7 +52,7 @@ class TeamController extends Controller
         if ($request->hasFile('photo')) {
             $image = $request->file('photo');
             $name = ($request->name). "." . date('Y-m-d') . "." . time() . "." . 'team' . "." . $image->getClientOriginalExtension();
-            $destination = ('/storage/uploads/teams');
+            $destination = public_path('storage/uploads/teams');
             $image->move($destination, $name);
             $image_url = $name;
         }else{

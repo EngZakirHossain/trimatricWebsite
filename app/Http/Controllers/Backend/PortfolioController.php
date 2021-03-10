@@ -17,7 +17,7 @@ class PortfolioController extends Controller
     {
         $request->validate([
             'project_id' => 'required',
-            'photo' => 'required',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,bmp,gif,svg|max:2048',
         ]);
 
         $current_id = Portfolio::insertGetId([
@@ -30,7 +30,7 @@ class PortfolioController extends Controller
             //upload profile photo start
             $image = $request->file('photo');
             $name = "$request->project_id".'('."$current_id".')'.".".$image->getClientOriginalExtension();
-            $destination = ('uploads/projects/');
+            $destination = public_path('storage/uploads/portfolio');
             $image->move($destination,$name);
             Portfolio::findOrFail($current_id)->update([
                 'photo' => $name,
@@ -49,7 +49,7 @@ class PortfolioController extends Controller
     public function destroy(Request $request)
     {
         $name = Portfolio::findOrFail($request->id)->photo;
-        $old_photo_location = ('uploads/projects/').$name;
+        $old_photo_location = public_path('storage/uploads/portfolio').$name;
         unlink($old_photo_location);
 
         $slider_delete = Portfolio::findOrFail($request->id);

@@ -32,8 +32,8 @@
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide hov_zoom">
-                            <img src="{{asset('uploads/projects')}}/{{$projects->photo}}" alt="">
-                            <a href="{{asset('uploads/projects')}}/{{$projects->photo}}" class="box-media-zoom   popup-image"><i
+                            <img src="{{asset('storage/uploads/projects')}}/{{$projects->photo}}" alt="">
+                            <a href="{{asset('storage/uploads/projects')}}/{{$projects->photo}}" class="box-media-zoom   popup-image"><i
                                     class="fal fa-search"></i></a>
                             <div class="pr-bg"></div>
                         </div>
@@ -43,8 +43,8 @@
                         <!-- swiper-slide-->
                         @foreach($portfolio as $pro)
                         <div class="swiper-slide hov_zoom">
-                                <img src="{{asset('uploads/projects')}}/{{$pro->photo}}" alt="">
-                                <a href="{{asset('uploads/projects')}}/{{$pro->photo}}" class="box-media-zoom   popup-image"><i
+                                <img src="{{asset('storage/uploads/portfolio')}}/{{$pro->photo}}" alt="">
+                                <a href="{{asset('storage/uploads/portfolio')}}/{{$pro->photo}}" class="box-media-zoom   popup-image"><i
                                         class="fal fa-search"></i></a>
                                 <div class="pr-bg"></div>
                         </div>
