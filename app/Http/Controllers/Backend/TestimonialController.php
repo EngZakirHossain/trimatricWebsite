@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Testimonial;
+use File;
 use Illuminate\Http\Request;
 
 class TestimonialController extends Controller
@@ -103,6 +104,15 @@ class TestimonialController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $image = Testimonial::findOrFail($id);
+        $image_path = public_path("storage/uploads/testimonial/{$image->photo}");
+
+        if (File::exists($image_path)) {
+            unlink($image_path);
+        }
+
+        $testimonial = Testimonial::find($id);
+        $testimonial->delete();
+        return back()->with('message','Testimonial Delete Successfully');
     }
 }

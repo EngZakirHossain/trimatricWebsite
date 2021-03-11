@@ -77,7 +77,7 @@
                 <div class="col-sm-12">
                     @if ($errors->any())
                         <div class="alert alert-danger">
-                            Slider Added Not Successfully, please fill-up form correctly.
+                            Portfolio Added Not Successfully, please fill-up form correctly.
                         </div>
                     @endif
                     @if (Session::has('message'))
@@ -115,12 +115,39 @@
                                                 @endphp
                                             <td>{{ $projects->title }}</td>
                                             <td>{{ $projects->cat_name }}</td>
-                                            <td class="text-right">
-                                                <a href="#" class="btn btn-sm btn-white text-danger sweet_delete mr-2">
-                                                    <i class="far fa-trash-alt mr-1"></i>
-                                                    Delete
-                                                </a>
+                                            <td>
+{{--                                                <a href="#" type="button" class="btn btn-secondary">--}}
+{{--                                                    <span data-feather="edit"></span>--}}
+{{--                                                </a>--}}
+                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$row->id}}">
+                                                    <span data-feather="trash-2"></span>
+                                                </button>
                                             </td>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="exampleModal{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <form action="{{route('portfolio.delete')}}" method="POST">
+                                                            @csrf
+                                                            <input type="hidden" name="id" value="{{$row->id}}">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Delete!</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <h6>Do you Want to delete this portfolio?</h6>
+                                                                <p>portfolio won't be available!!</p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </tr>
 
                                     @empty

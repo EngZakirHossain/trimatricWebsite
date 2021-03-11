@@ -63,13 +63,37 @@
                                                     <i class="far fa-eye mr-1"></i>
                                                     View
                                                 </a>
-                                                <a href="#" class="btn btn-sm btn-white text-danger sweet_delete mr-2">
-                                                    <i class="far fa-trash-alt mr-1"></i>
-                                                    Delete
-                                                </a>
+                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$row->id}}">
+                                                    <span data-feather="trash-2"></span>
+                                                </button>
                                             </td>
 
                                             <!-- Modal -->
+                                            <div class="modal fade" id="exampleModal{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <form action="{{route('contact.delete')}}" method="POST">
+                                                            @csrf
+                                                            <input type="hidden" name="id" value="{{$row->id}}">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Delete!</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <h6>Do you Want to delete this Contact?</h6>
+                                                                <p>Contact won't be available!!</p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                             <div class="modal fade" id="exampleModal{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
@@ -113,59 +137,5 @@
             </div>
         </div>
     </div>
-
-@endsection
-@section('scripts')
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-            $('.sweet_delete').click(function(){
-
-
-                var delete_id = $(this).closest("tr").find('.Delete_val_id').val();
-                // alert(delete_id);
-
-                Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        var data = {
-                            "_token": $('input[name=_token]').val(),
-                            "id": delete_id,
-                        };
-                        $.ajax({
-                            type:"POST",
-                            url:"{{route('contact.delete')}}",
-                            data: data,
-                            success: function (response){
-                                Swal.fire(
-                                    'Deleted!',
-                                    'Contact deleted.',
-                                    'success'
-                                )
-                                    .then((result) =>{
-                                        location.reload();
-                                    });
-                            }
-                        });
-
-
-
-                    }
-                })
-            });
-        } );
-    </script>
 
 @endsection

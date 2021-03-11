@@ -38,5 +38,11 @@ class CareerControler extends Controller
         Circular::create($data);
         return redirect()->back()->with('message','Circular Published Successfully');
     }
+    public function destroy(Request $request){
+
+        $circular = Circular::findOrFail($request->id);
+        $circular->delete();
+        return back()->with('message','Circular Delete Successfully');
+    }
 
 }

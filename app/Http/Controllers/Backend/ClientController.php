@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Client;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
+use File;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -45,17 +46,21 @@ class ClientController extends Controller
 
     public function destroy(Request $request)
     {
-        $name = Client::findOrFail($request->id)->photo;
-        $old_photo_location = public_path('storage/uploads/clients').$name;
-        unlink($old_photo_location);
+        $image = Client::findOrFail($request->id);
+        $image_path = public_path("storage/uploads/clients/{$image->photo}");
 
-        $slider_delete = Client::findOrFail($request->id);
-        $slider_delete->delete();
-        return back()->with('message','Client Delete Successfully');
+        if (File::exists($image_path)) {
+            unlink($image_path);
+        }
+
+        $client = Client::find($request->id);
+        $client->delete();
+        return redirect()->back()->with('message','Client Delete Successfully');
     }
 
     public function client(){
         $clients = Client::orderBy('id','desc')->get();
         return view('frontend.pages.client',compact('clients'));
     }
+
 }

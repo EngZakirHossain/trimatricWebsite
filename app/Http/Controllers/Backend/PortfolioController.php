@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Portfolio;
 use Carbon\Carbon;
+use File;
 use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
@@ -48,13 +49,15 @@ class PortfolioController extends Controller
 
     public function destroy(Request $request)
     {
-        $name = Portfolio::findOrFail($request->id)->photo;
-        $old_photo_location = public_path('storage/uploads/portfolio').$name;
-        unlink($old_photo_location);
+        $image = Portfolio::findOrFail($request->id);
+        $image_path = public_path("storage/uploads/portfolio/{$image->photo}");
 
-        $slider_delete = Portfolio::findOrFail($request->id);
-        $slider_delete->delete();
+        if (File::exists($image_path)) {
+            unlink($image_path);
+        }
 
+        $portfolio = Portfolio::find($request->id);
+        $portfolio->delete();
         return back()->with('message','Portfolio Delete Successfully');
 
     }

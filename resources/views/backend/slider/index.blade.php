@@ -123,9 +123,9 @@
                                             <td>{!! \Illuminate\Support\Str::limit($slider_info->description, 20)  !!}</td>
                                             <td>{{ $slider_info->created_at->diffForHumans() }}</td>
                                             <td>
-                                                <a href="{{route('slider.edit',[$slider_info->id])}}" type="button" class="btn btn-secondary">
-                                                    <span data-feather="edit"></span>
-                                                </a>
+{{--                                                <a href="{{route('slider.edit',[$slider_info->id])}}" type="button" class="btn btn-secondary">--}}
+{{--                                                    <span data-feather="edit"></span>--}}
+{{--                                                </a>--}}
                                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$slider_info->id}}">
                                                     <span data-feather="trash-2"></span>
                                                 </button>
@@ -134,9 +134,9 @@
                                             <div class="modal fade" id="exampleModal{{$slider_info->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
-                                                        <form action="{{route('slider.delete',[$slider_info->id])}}" method="POST">
+                                                        <form action="{{route('slider.delete')}}" method="POST">
                                                             @csrf
-                                                            {{method_field('DELETE')}}
+                                                            <input type="hidden" name="id" value="{{$slider_info->id}}">
                                                             <div class="modal-header">
                                                                 <h5 class="modal-title" id="exampleModalLabel">Delete!</h5>
                                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">

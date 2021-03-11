@@ -55,19 +55,18 @@ class SliderController extends Controller
     }
 
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-//        dd($id);
-        $image = Slider::findOrFail($id);
+
+        $image = Slider::findOrFail($request->id);
         $image_path = public_path("storage/uploads/slider/{$image->photo}");
 
         if (File::exists($image_path)) {
             unlink($image_path);
         }
 
-        $slider_delete = Slider::find($id);
-
-        $slider_delete->delete();
-        return redirect()->back()->with('message','Slider Delete Successfully');
+        $slider = Slider::find($request->id);
+        $slider->delete();
+        return redirect()->back()->with('slider_added','Slider Delete Successfully');
     }
 }

@@ -46,7 +46,7 @@ Route::get('/backend-dashboard', 'HomeController@index')->name('home');
 Route::group(['prefix'=>'backend-slider','as'=>'slider.'], function (){
     Route::get('/slider', 'Backend\SliderController@index')->name('index');
     Route::post('/all-slider', 'Backend\SliderController@store')->name('store');
-    Route::post('/delete/{$id}', 'Backend\SliderController@destroy')->name('delete');
+    Route::post('/delete', 'Backend\SliderController@destroy')->name('delete');
     Route::get('/edit/{$id}', 'Backend\SliderController@edit')->name('edit');
 //    Route::post('/update', 'Backend\SliderController@update')->name('update');
 });
@@ -65,10 +65,10 @@ Route::group(['prefix'=>'backend-client','as'=>'client.'], function (){
     Route::post('/all-client', 'Backend\ClientController@store')->name('store');
     Route::post('/delete', 'Backend\ClientController@destroy')->name('delete');
 });
-Route::post('/store', 'Backend\ContactController@store')->name('contact.store');
 
 Route::group(['prefix'=>'backend-contact','as'=>'contact.'], function (){
     Route::get('/all-contacts', 'Backend\ContactController@view')->name('allContacts');
+    Route::post('/store', 'Backend\ContactController@store')->name('store');
     Route::post('/delete', 'Backend\ContactController@destroy')->name('delete');
 });
 
@@ -76,6 +76,7 @@ Route::group(['prefix'=>'backend-career','as'=>'circular.'], function (){
    Route::get('/create', 'Backend\CareerControler@create')->name('create');
    Route::post('/store', 'Backend\CareerControler@store')->name('store');
    Route::get('/list', 'Backend\CareerControler@index')->name('index');
+   Route::post('/delete', 'Backend\CareerControler@destroy')->name('delete');
 });
 
 Route::group(['prefix'=>'backend-cv','as'=>'cv.'], function (){
